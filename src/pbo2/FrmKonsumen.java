@@ -389,8 +389,9 @@ JOptionPane.showMessageDialog(null, e.getMessage());
     }//GEN-LAST:event_BtnBatalActionPerformed
 
     private void BtnKoreksiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnKoreksiActionPerformed
-        // TODO add your handling code here:
+        // TODO add your handling code here:pil=2;
         koreksiData();
+        pil=2;
         setTombol(false, false, false, false, true, false);
         setEdit(true, false, false, false, false, false);
         mKodeKonsumen.requestFocus();
