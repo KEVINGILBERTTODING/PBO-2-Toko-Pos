@@ -10,6 +10,8 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.Statement;
 import static javax.management.remote.JMXConnectorFactory.connect;
+import static javax.management.remote.JMXConnectorFactory.connect;
+import static javax.rmi.PortableRemoteObject.connect;
 import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
@@ -124,10 +126,20 @@ int pil;
 }
     
     private void simpanData(){
-       
-       
-        String sql_insert = "insert into barang values ('"+mKodeBarang.getText()+"','"+ mNamaBarang.getText()+"','"+mHargaBeliBarang.getText()+"','"+mKodeBarang.getText() +"','"+mStockBarang.getText()+"','"+mStokMinBarang.getText()+"')";
-        try {
+//        int  hrgJual, hrgBeli, stokBrg, stokMin, hrgg;
+//        String kode, namaBrg;
+//        
+//      kode    =   mKodeBarang.getText();
+//      namaBrg    =   mNamaBarang.getText();
+//      hrgBeli=Integer.parseInt(mHargaBeliBarang.getText());
+//      hrgJual=Integer.parseInt(mHargaJualBarang.getText());
+//      stokBrg=Integer.parseInt(mStockBarang.getText());
+//      stokMin=Integer.parseInt(mStokMinBarang.getText());
+      
+  
+    String sql_insert = "insert into barang values ('"+mKodeBarang.getText()+"','"+ mNamaBarang.getText()+"','"+mHargaBeliBarang.getText()+"','"+mHargaJualBarang.getText() +"','"+mStockBarang.getText()+"','"+mStokMinBarang.getText()+"')";
+     try {
+         
         statement.executeUpdate(sql_insert);
         } catch (Exception e) {
         JOptionPane.showMessageDialog(null, e.getMessage());
@@ -338,9 +350,9 @@ JOptionPane.showMessageDialog(null, e.getMessage());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
                         .addGap(78, 78, 78)
                         .addComponent(BtnTambah)
                         .addGap(18, 18, 18)
@@ -354,8 +366,11 @@ JOptionPane.showMessageDialog(null, e.getMessage());
                         .addGap(18, 18, 18)
                         .addComponent(BtnKeluar)
                         .addGap(0, 126, Short.MAX_VALUE))
-                    .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.TRAILING))
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
                 .addContainerGap())
         );
         layout.setVerticalGroup(
