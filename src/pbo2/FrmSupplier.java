@@ -17,7 +17,7 @@ import javax.swing.table.DefaultTableModel;
  *
  * @author XXIVKVNGLRT
  */
-public class FrmKonsumen extends javax.swing.JFrame {
+public class FrmSupplier extends javax.swing.JFrame {
 
     /**
      * Creates new form FrmKonsumen
@@ -29,7 +29,7 @@ ResultSet resultSet;
 int pil;
 
 
-    public FrmKonsumen() {
+    public FrmSupplier() {
         initComponents();
          
         k = new koneksi();
@@ -56,7 +56,7 @@ int pil;
     private void tampilTabel(){
             Object
             header[]={"Kode","Nama","Alamat","Kota","Telp.","HP"};
-            DefaultTableModel modelKonsumen = new
+            DefaultTableModel modelSupplier = new
             DefaultTableModel(null,header)
             {
             @Override
@@ -66,12 +66,12 @@ int pil;
             return false;
             }
             };
-            tabelKonsumen.setModel(modelKonsumen);
-            int baris = tabelKonsumen.getRowCount();
+            tabelSupplier.setModel(modelSupplier);
+            int baris = tabelSupplier.getRowCount();
             for (int i = 0; i < baris; i++) {
-            modelKonsumen.removeRow(i);
+            modelSupplier.removeRow(i);
             }
-            String sql_select = "select * from konsumen";
+            String sql_select = "select * from supplier";
             try {
             statement = k.con.createStatement();
             resultSet = statement.executeQuery(sql_select);
@@ -83,7 +83,7 @@ int pil;
             String telp = resultSet.getString(5);
             String hp = resultSet.getString(6);
             String kolom[] = {kode,nama,alamat,kota,telp,hp};
-            modelKonsumen.addRow(kolom);
+            modelSupplier.addRow(kolom);
             }
             } catch (Exception e) {
             JOptionPane.showMessageDialog(null, e.getMessage());
@@ -91,12 +91,12 @@ int pil;
 }
     
     private void bersih(){
-        mKodeKonsumen.setText(null);
-        mNamaKonsumen.setText(null);
-        mAlamatKonsumen.setText(null);
-        mKotaKonsumen.setText(null);
-        mTelpKonsumen.setText(null);
-        mHPKonsumen.setText(null);
+        mKodeSupplier.setText(null);
+        mNamaSupplier.setText(null);
+        mAlamatSupplier.setText(null);
+        mKotaSupplier.setText(null);
+        mTelpSupplier.setText(null);
+        mHPSupplier.setText(null);
 }
     
     private void setTombol(boolean xTambah,boolean
@@ -113,16 +113,16 @@ int pil;
     private void setEdit(boolean yKode,boolean yNama,boolean
         yAlamat,boolean yKota,
         boolean yTelp,boolean yHP){
-        mKodeKonsumen.setEnabled(yKode);
-        mNamaKonsumen.setEnabled(yNama);
-        mAlamatKonsumen.setEnabled(yAlamat);
-        mKotaKonsumen.setEnabled(yKota);
-        mTelpKonsumen.setEnabled(yTelp);
-        mHPKonsumen.setEnabled(yHP);
+        mKodeSupplier.setEnabled(yKode);
+        mNamaSupplier.setEnabled(yNama);
+        mAlamatSupplier.setEnabled(yAlamat);
+        mKotaSupplier.setEnabled(yKota);
+        mTelpSupplier.setEnabled(yTelp);
+        mHPSupplier.setEnabled(yHP);
 }
     
     private void simpanData(){
-        String sql_insert = "insert into konsumen values ('"+mKodeKonsumen.getText()+"','"+ mNamaKonsumen.getText()+"','"+mAlamatKonsumen.getText()+"','"+mKotaKonsumen.getText() +"','"+mTelpKonsumen.getText()+"','"+mHPKonsumen.getText()+"')";
+        String sql_insert = "insert into supplier values ('"+mKodeSupplier.getText()+"','"+ mNamaSupplier.getText()+"','"+mAlamatSupplier.getText()+"','"+mKotaSupplier.getText() +"','"+mTelpSupplier.getText()+"','"+mHPSupplier.getText()+"')";
         try {
         statement.executeUpdate(sql_insert);
         } catch (Exception e) {
@@ -131,7 +131,7 @@ int pil;
 }
      
      private void koreksiData(){
-        String sql_edit = "update konsumen set namakonsumen='"+mNamaKonsumen.getText()+"', alamatkonsumen='"+mAlamatKonsumen.getText()+"', kotakonsumen='"+mKotaKonsumen.getText()+ "', telpkonsumen='"+ mTelpKonsumen.getText()+"', hpkonsumen='"+mHPKonsumen.getText()+ "' where kodekonsumen='"+mKodeKonsumen.getText()+"'";
+        String sql_edit = "update konsumen set namakonsumen='"+mNamaSupplier.getText()+"', alamatkonsumen='"+mAlamatSupplier.getText()+"', kotakonsumen='"+mKotaSupplier.getText()+ "', telpkonsumen='"+ mTelpSupplier.getText()+"', hpkonsumen='"+mHPSupplier.getText()+ "' where kodekonsumen='"+mKodeSupplier.getText()+"'";
         try {
             statement.executeUpdate(sql_edit);
         } catch (Exception e) {
@@ -140,7 +140,7 @@ int pil;
 }
      
 private void hapusData(){
-String sql_delete = "delete from konsumen where kodekonsumen='"+mKodeKonsumen.getText()+"'";
+String sql_delete = "delete from supplier where KodeSupplier='"+mKodeSupplier.getText()+"'";
 try {
 statement.executeUpdate(sql_delete);
 } catch (Exception e) {
@@ -165,12 +165,12 @@ JOptionPane.showMessageDialog(null, e.getMessage());
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
-        mKodeKonsumen = new javax.swing.JTextField();
-        mNamaKonsumen = new javax.swing.JTextField();
-        mAlamatKonsumen = new javax.swing.JTextField();
-        mKotaKonsumen = new javax.swing.JTextField();
-        mTelpKonsumen = new javax.swing.JTextField();
-        mHPKonsumen = new javax.swing.JTextField();
+        mKodeSupplier = new javax.swing.JTextField();
+        mNamaSupplier = new javax.swing.JTextField();
+        mAlamatSupplier = new javax.swing.JTextField();
+        mKotaSupplier = new javax.swing.JTextField();
+        mTelpSupplier = new javax.swing.JTextField();
+        mHPSupplier = new javax.swing.JTextField();
         BtnTambah = new javax.swing.JButton();
         BtnKoreksi = new javax.swing.JButton();
         BtnHapus = new javax.swing.JButton();
@@ -178,16 +178,16 @@ JOptionPane.showMessageDialog(null, e.getMessage());
         BtnBatal = new javax.swing.JButton();
         BtnKeluar = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
-        tabelKonsumen = new javax.swing.JTable();
+        tabelSupplier = new javax.swing.JTable();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setTitle("Pendataan Konsumen");
+        setTitle("Pendataan Supplier");
 
         jPanel1.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
-        jLabel1.setText("Kode");
+        jLabel1.setText("Kode Supplier");
 
-        jLabel2.setText("Nama");
+        jLabel2.setText("Nama Supplier");
 
         jLabel3.setText("Alamat");
 
@@ -197,22 +197,22 @@ JOptionPane.showMessageDialog(null, e.getMessage());
 
         jLabel6.setText("HP");
 
-        mKodeKonsumen.setEnabled(false);
-        mKodeKonsumen.addActionListener(new java.awt.event.ActionListener() {
+        mKodeSupplier.setEnabled(false);
+        mKodeSupplier.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                mKodeKonsumenActionPerformed(evt);
+                mKodeSupplierActionPerformed(evt);
             }
         });
 
-        mNamaKonsumen.setEnabled(false);
+        mNamaSupplier.setEnabled(false);
 
-        mAlamatKonsumen.setEnabled(false);
+        mAlamatSupplier.setEnabled(false);
 
-        mKotaKonsumen.setEnabled(false);
+        mKotaSupplier.setEnabled(false);
 
-        mTelpKonsumen.setEnabled(false);
+        mTelpSupplier.setEnabled(false);
 
-        mHPKonsumen.setEnabled(false);
+        mHPSupplier.setEnabled(false);
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -229,13 +229,13 @@ JOptionPane.showMessageDialog(null, e.getMessage());
                     .addComponent(jLabel6))
                 .addGap(57, 57, 57)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(mKodeKonsumen, javax.swing.GroupLayout.PREFERRED_SIZE, 142, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(mAlamatKonsumen, javax.swing.GroupLayout.PREFERRED_SIZE, 424, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(mNamaKonsumen, javax.swing.GroupLayout.PREFERRED_SIZE, 302, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(mKotaKonsumen, javax.swing.GroupLayout.PREFERRED_SIZE, 193, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(mKodeSupplier, javax.swing.GroupLayout.PREFERRED_SIZE, 142, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(mAlamatSupplier, javax.swing.GroupLayout.PREFERRED_SIZE, 424, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(mNamaSupplier, javax.swing.GroupLayout.PREFERRED_SIZE, 302, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(mKotaSupplier, javax.swing.GroupLayout.PREFERRED_SIZE, 193, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                        .addComponent(mHPKonsumen, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 159, Short.MAX_VALUE)
-                        .addComponent(mTelpKonsumen, javax.swing.GroupLayout.Alignment.LEADING)))
+                        .addComponent(mHPSupplier, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 159, Short.MAX_VALUE)
+                        .addComponent(mTelpSupplier, javax.swing.GroupLayout.Alignment.LEADING)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
@@ -244,27 +244,27 @@ JOptionPane.showMessageDialog(null, e.getMessage());
                 .addContainerGap()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel1)
-                    .addComponent(mKodeKonsumen, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(mKodeSupplier, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(14, 14, 14)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2)
-                    .addComponent(mNamaKonsumen, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(mNamaSupplier, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(14, 14, 14)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel3)
-                    .addComponent(mAlamatKonsumen, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(mAlamatSupplier, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(14, 14, 14)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel4)
-                    .addComponent(mKotaKonsumen, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(mKotaSupplier, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(14, 14, 14)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel5)
-                    .addComponent(mTelpKonsumen, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(mTelpSupplier, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(14, 14, 14)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel6)
-                    .addComponent(mHPKonsumen, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(mHPSupplier, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -312,7 +312,7 @@ JOptionPane.showMessageDialog(null, e.getMessage());
             }
         });
 
-        tabelKonsumen.setModel(new javax.swing.table.DefaultTableModel(
+        tabelSupplier.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null, null, null},
                 {null, null, null, null, null, null},
@@ -323,12 +323,12 @@ JOptionPane.showMessageDialog(null, e.getMessage());
                 "Kode", "Nama", "Alamat", "Kota", "Telp.", "HP"
             }
         ));
-        tabelKonsumen.addMouseListener(new java.awt.event.MouseAdapter() {
+        tabelSupplier.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                tabelKonsumenMouseClicked(evt);
+                tabelSupplierMouseClicked(evt);
             }
         });
-        jScrollPane1.setViewportView(tabelKonsumen);
+        jScrollPane1.setViewportView(tabelSupplier);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -394,7 +394,7 @@ JOptionPane.showMessageDialog(null, e.getMessage());
         pil=2;
         setTombol(false, false, false, false, true, false);
         setEdit(true, false, false, false, false, false);
-        mKodeKonsumen.requestFocus();
+        mKodeSupplier.requestFocus();
     }//GEN-LAST:event_BtnKoreksiActionPerformed
 
     private void BtnHapusActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnHapusActionPerformed
@@ -403,7 +403,7 @@ JOptionPane.showMessageDialog(null, e.getMessage());
         pil = 3;
         setTombol(false, false, false, false, true, false);
         setEdit(true, false, false, false, false, false);
-        mKodeKonsumen.requestFocus();
+        mKodeSupplier.requestFocus();
     }//GEN-LAST:event_BtnHapusActionPerformed
 
     private void BtnSimpanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnSimpanActionPerformed
@@ -429,16 +429,16 @@ JOptionPane.showMessageDialog(null, e.getMessage());
         System.exit(0);
     }//GEN-LAST:event_BtnKeluarActionPerformed
 
-    private void mKodeKonsumenActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mKodeKonsumenActionPerformed
+    private void mKodeSupplierActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mKodeSupplierActionPerformed
         // TODO add your handling code here:
         
-        if (mKodeKonsumen.getText().isEmpty()){
+        if (mKodeSupplier.getText().isEmpty()){
         JOptionPane.showMessageDialog(null, "Kode Konsumen masih kosong...","Kesalahan",JOptionPane.ERROR_MESSAGE);
-        mKodeKonsumen.requestFocus();
+        mKodeSupplier.requestFocus();
         } else {
         // Button Tambah
         if (pil==1){
-        String sql_select = "select * from konsumen where kodekonsumen='"+mKodeKonsumen.getText()+"'";
+        String sql_select = "select * from supplier where kodesupplier='"+mKodeSupplier.getText()+"'";
         try {
         statement = k.con.createStatement();
         resultSet = statement.executeQuery(sql_select);
@@ -449,10 +449,10 @@ JOptionPane.showMessageDialog(null, e.getMessage());
         if (baris==0){
         setEdit(false, true, true, true, true, true);
         BtnSimpan.setEnabled(true);
-        mNamaKonsumen.requestFocus();
+        mNamaSupplier.requestFocus();
         } else {
         JOptionPane.showMessageDialog(null, "Kode Konsumen sudah ada...", "Kesalahan",JOptionPane.ERROR_MESSAGE);
-        mKodeKonsumen.requestFocus();
+        mKodeSupplier.requestFocus();
         }
         } catch (Exception e) {
         JOptionPane.showMessageDialog(null,
@@ -461,22 +461,22 @@ JOptionPane.showMessageDialog(null, e.getMessage());
         } // Akhir Button Tambah
         // Button Koreksi
         if (pil==2){
-        String sql_select = "select * from konsumen where kodekonsumen='"+mKodeKonsumen.getText()+"'";
+        String sql_select = "select * from supplier where kodesupplier='"+mKodeSupplier.getText()+"'";
         try {
         statement = k.con.createStatement();
         resultSet = statement.executeQuery(sql_select);
         if (resultSet.next()){
-        mNamaKonsumen.setText(resultSet.getString(2));
-        mAlamatKonsumen.setText(resultSet.getString(3));
-        mKotaKonsumen.setText(resultSet.getString(4));
-        mTelpKonsumen.setText(resultSet.getString(5));
-        mHPKonsumen.setText(resultSet.getString(6));
+        mNamaSupplier.setText(resultSet.getString(2));
+        mAlamatSupplier.setText(resultSet.getString(3));
+        mKotaSupplier.setText(resultSet.getString(4));
+        mTelpSupplier.setText(resultSet.getString(5));
+        mHPSupplier.setText(resultSet.getString(6));
         setEdit(false, true, true, true, true, true);
         BtnSimpan.setEnabled(true);
-        mNamaKonsumen.requestFocus();
+        mNamaSupplier.requestFocus();
         } else {
         JOptionPane.showMessageDialog(null, "Kode Konsumen tidak diketemukan...","Kesalahan",JOptionPane.ERROR_MESSAGE);
-        mKodeKonsumen.requestFocus();
+        mKodeSupplier.requestFocus();
         }
         } catch (Exception e) {
         JOptionPane.showMessageDialog(null,
@@ -485,16 +485,16 @@ JOptionPane.showMessageDialog(null, e.getMessage());
         } // Akhir Button Koreksi
         // Button Hapus
         if (pil==3){
-        String sql_select = "select * from konsumen where kodekonsumen='"+mKodeKonsumen.getText()+"'";
+        String sql_select = "select * from konsumen where kodekonsumen='"+mKodeSupplier.getText()+"'";
         try {
         statement = k.con.createStatement();
         resultSet = statement.executeQuery(sql_select);
         if (resultSet.next()){
-        mNamaKonsumen.setText(resultSet.getString(2));
-        mAlamatKonsumen.setText(resultSet.getString(3));
-        mKotaKonsumen.setText(resultSet.getString(4));
-        mTelpKonsumen.setText(resultSet.getString(5));
-        mHPKonsumen.setText(resultSet.getString(6));
+        mNamaSupplier.setText(resultSet.getString(2));
+        mAlamatSupplier.setText(resultSet.getString(3));
+        mKotaSupplier.setText(resultSet.getString(4));
+        mTelpSupplier.setText(resultSet.getString(5));
+        mHPSupplier.setText(resultSet.getString(6));
         setEdit(false, false, false, false, false,
         false);
         int opsi = JOptionPane.showConfirmDialog(null,
@@ -513,7 +513,7 @@ JOptionPane.showMessageDialog(null, e.getMessage());
         BtnTambah.requestFocus();
         } else {
         JOptionPane.showMessageDialog(null, "Kode Konsumen tidak diketemukan...","Kesalahan",JOptionPane.ERROR_MESSAGE);
-        mKodeKonsumen.requestFocus();
+        mKodeSupplier.requestFocus();
         }
         } catch (Exception e) {
         JOptionPane.showMessageDialog(null,
@@ -521,35 +521,35 @@ JOptionPane.showMessageDialog(null, e.getMessage());
         }
         } // Akhir Button Hapus
         }
-    }//GEN-LAST:event_mKodeKonsumenActionPerformed
+    }//GEN-LAST:event_mKodeSupplierActionPerformed
 
     private void BtnTambahActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnTambahActionPerformed
         // TODO add your handling code here:
         pil = 1;
         setTombol(false, false, false, false, true, false);
         setEdit(true, false, false, false, false, false);
-        mKodeKonsumen.requestFocus();
+        mKodeSupplier.requestFocus();
 
     }//GEN-LAST:event_BtnTambahActionPerformed
 
-    private void tabelKonsumenMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tabelKonsumenMouseClicked
+    private void tabelSupplierMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tabelSupplierMouseClicked
         // TODO add your handling code here:
         
          if (pil==2 || pil==3){
-        mKodeKonsumen.setText(tabelKonsumen.getValueAt(tabelKonsumen.getSelectedRow(), 0).toString());
-        mNamaKonsumen.setText(tabelKonsumen.getValueAt(tabelKonsumen.getSelectedRow(), 1).toString());
-        mAlamatKonsumen.setText(tabelKonsumen.getValueAt(tabelKonsumen.getSelectedRow(), 2).toString());
-        mKotaKonsumen.setText(tabelKonsumen.getValueAt(tabelKonsumen.getSelectedRow(), 3).toString());
-        mTelpKonsumen.setText(tabelKonsumen.getValueAt(tabelKonsumen.getSelectedRow(), 4).toString());
-        mHPKonsumen.setText(tabelKonsumen.getValueAt(tabelKonsumen.getSelectedRow(), 5).toString());
+        mKodeSupplier.setText(tabelSupplier.getValueAt(tabelSupplier.getSelectedRow(), 0).toString());
+        mNamaSupplier.setText(tabelSupplier.getValueAt(tabelSupplier.getSelectedRow(), 1).toString());
+        mAlamatSupplier.setText(tabelSupplier.getValueAt(tabelSupplier.getSelectedRow(), 2).toString());
+        mKotaSupplier.setText(tabelSupplier.getValueAt(tabelSupplier.getSelectedRow(), 3).toString());
+        mTelpSupplier.setText(tabelSupplier.getValueAt(tabelSupplier.getSelectedRow(), 4).toString());
+        mHPSupplier.setText(tabelSupplier.getValueAt(tabelSupplier.getSelectedRow(), 5).toString());
         }
         if (pil == 2) {
         setEdit(false, true, true, true, true, true);
         BtnSimpan.setEnabled(true);
-        mNamaKonsumen.requestFocus();
+        mNamaSupplier.requestFocus();
         }
         if (pil == 3) {
-        mKodeKonsumen.setEnabled(false);
+        mKodeSupplier.setEnabled(false);
         int opsi = JOptionPane.showConfirmDialog(null, "Benarkah anda ingin menghapus data ini ?", "Penghapusan Data",
         JOptionPane.YES_NO_OPTION);
         if (opsi == JOptionPane.YES_OPTION){
@@ -562,7 +562,7 @@ JOptionPane.showMessageDialog(null, e.getMessage());
         pil=5;
         BtnTambah.requestFocus();
         }
-    }//GEN-LAST:event_tabelKonsumenMouseClicked
+    }//GEN-LAST:event_tabelSupplierMouseClicked
 
     /**
      * @param args the command line arguments
@@ -581,20 +581,21 @@ JOptionPane.showMessageDialog(null, e.getMessage());
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(FrmKonsumen.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(FrmSupplier.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(FrmKonsumen.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(FrmSupplier.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(FrmKonsumen.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(FrmSupplier.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(FrmKonsumen.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(FrmSupplier.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new FrmKonsumen().setVisible(true);
+                new FrmSupplier().setVisible(true);
             }
         });
     }
@@ -616,13 +617,13 @@ JOptionPane.showMessageDialog(null, e.getMessage());
     private javax.swing.JLabel jLabel6;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTextField mAlamatKonsumen;
-    private javax.swing.JTextField mHPKonsumen;
-    private javax.swing.JTextField mKodeKonsumen;
-    private javax.swing.JTextField mKotaKonsumen;
-    private javax.swing.JTextField mNamaKonsumen;
-    private javax.swing.JTextField mTelpKonsumen;
-    private javax.swing.JTable tabelKonsumen;
+    private javax.swing.JTextField mAlamatSupplier;
+    private javax.swing.JTextField mHPSupplier;
+    private javax.swing.JTextField mKodeSupplier;
+    private javax.swing.JTextField mKotaSupplier;
+    private javax.swing.JTextField mNamaSupplier;
+    private javax.swing.JTextField mTelpSupplier;
+    private javax.swing.JTable tabelSupplier;
     // End of variables declaration//GEN-END:variables
 
    
