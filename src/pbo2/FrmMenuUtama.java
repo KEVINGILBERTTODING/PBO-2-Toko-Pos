@@ -32,46 +32,64 @@ public class FrmMenuUtama extends javax.swing.JFrame {
          
     }
     
+     
+   
+
+    
     private void tampilIcon(){
         mnuFile.setIcon(new ImageIcon("./gambar/File_64x64.png"));
         mnuMaster.setIcon(new
-       ImageIcon("./gambar/Master_64x64.png"));
-        mnuTransaksi.setIcon(new
-       ImageIcon("./gambar/Shopping_64x64.png"));
-        mnuLaporan.setIcon(new
-       ImageIcon("./gambar/Report_64x64.png"));
-        mnuAbout.setIcon(new
-       ImageIcon("./gambar/About_64x64.png"));
-        mnuKeluar.setIcon(new
-       ImageIcon("./gambar/Keluar_16x16.png"));
-        mnuLapKonsumen.setIcon(new
-       ImageIcon("./gambar/Customer_16x16.png"));
-        mnuLapSupplier.setIcon(new
-       ImageIcon("./gambar/Supplier_16x16.png"));
-        mnuLapBarang.setIcon(new
-       ImageIcon("./gambar/Barang_16x16.png"));
-        mnuLapPenjualan.setIcon(new
-       ImageIcon("./gambar/Penjualan_16x16.png"));
-        mnuLapPembelian.setIcon(new
-       ImageIcon("./gambar/Pembelian_16x16.png"));
-        mnuLapReturPenjualan.setIcon(new
-       ImageIcon("./gambar/ReturPenjualan_16x16.png"));
-        mnuLapReturPembelian.setIcon(new
-       ImageIcon("./gambar/ReturPembelian_16x16.png"));
-        mnuLapKonsumen.setIcon(new
-       ImageIcon("./gambar/LapKonsumen_16x16.png"));
-        mnuLapSupplier.setIcon(new
-       ImageIcon("./gambar/LapSupplier_16x16.png"));
-        mnuLapBarang.setIcon(new
-       ImageIcon("./gambar/LapBarang_16x16.png"));
-        mnuLapPenjualan.setIcon(new
-       ImageIcon("./gambar/LapPenjualan_16x16.png"));
-        mnuLapPembelian.setIcon(new
-       ImageIcon("./gambar/LapPembelian_16x16.png"));
-        mnuLapReturPenjualan.setIcon(new
-       ImageIcon("./gambar/LapReturPenjualan_16x16.png"));
-        mnuLapReturPembelian.setIcon(new
-       ImageIcon("./gambar/LapReturPembelian_16x16.png")); 
+        ImageIcon("./gambar/Master_64x64.png"));
+         mnuTransaksi.setIcon(new
+        ImageIcon("./gambar/Shopping_64x64.png"));
+         mnuLaporan.setIcon(new
+        ImageIcon("./gambar/Report_64x64.png"));
+         mnuAbout.setIcon(new
+        ImageIcon("./gambar/About_64x64.png"));
+         mnuKeluar.setIcon(new
+        ImageIcon("./gambar/Keluar_16x16.png"));
+          mnuKonsumen.setIcon(new
+        ImageIcon("./gambar/Customer_16x16.png"));
+          mnuSupplier.setIcon(new
+        ImageIcon("./gambar/Supplier_16x16.png"));
+          mnuBarang.setIcon(new
+        ImageIcon("./gambar/Barang_16x16.png"));
+         mnuPenjualan.setIcon(new
+        ImageIcon("./gambar/Penjualan_16x16.png"));
+         mnuPembelian.setIcon(new
+        ImageIcon("./gambar/Pembelian_16x16.png"));
+          mnuReturPembelian.setIcon(new
+        ImageIcon("./gambar/ReturPembelian_16x16.png"));
+          mnuReturPenjualan.setIcon(new
+        ImageIcon("./gambar/ReturPenjualan_16x16.png"));
+         mnuLapKonsumen.setIcon(new
+        ImageIcon("./gambar/Customer_16x16.png"));
+         mnuLapSupplier.setIcon(new
+        ImageIcon("./gambar/Supplier_16x16.png"));
+         mnuLapBarang.setIcon(new
+        ImageIcon("./gambar/Barang_16x16.png"));
+         mnuLapPenjualan.setIcon(new
+        ImageIcon("./gambar/Penjualan_16x16.png"));
+         mnuLapPembelian.setIcon(new
+        ImageIcon("./gambar/Pembelian_16x16.png"));
+         mnuLapReturPenjualan.setIcon(new
+        ImageIcon("./gambar/LapPenjualan_16x16.png"));
+         mnuLapReturPembelian.setIcon(new
+        ImageIcon("./gambar/LapPembelian_16x16.png"));
+         mnuLapKonsumen.setIcon(new
+        ImageIcon("./gambar/LapKonsumen_16x16.png"));
+         mnuLapSupplier.setIcon(new
+        ImageIcon("./gambar/LapSupplier_16x16.png"));
+         mnuLapBarang.setIcon(new
+        ImageIcon("./gambar/LapBarang_16x16.png"));
+         mnuLapPenjualan.setIcon(new
+        ImageIcon("./gambar/LapPenjualan_16x16.png"));
+         mnuLapPembelian.setIcon(new
+        ImageIcon("./gambar/LapPembelian_16x16.png"));
+         mnuLapReturPenjualan.setIcon(new
+        ImageIcon("./gambar/LapReturPenjualan_16x16.png"));
+         mnuLapReturPembelian.setIcon(new
+        ImageIcon("./gambar/LapReturPembelian_16x16.png")); 
  }
     
    
@@ -110,6 +128,11 @@ public class FrmMenuUtama extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Menu Utama");
+        addWindowListener(new java.awt.event.WindowAdapter() {
+            public void windowActivated(java.awt.event.WindowEvent evt) {
+                formWindowActivated(evt);
+            }
+        });
 
         jPanel1.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
@@ -121,7 +144,7 @@ public class FrmMenuUtama extends javax.swing.JFrame {
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 553, Short.MAX_VALUE)
+            .addGap(0, 542, Short.MAX_VALUE)
         );
 
         mnuFile.setText("File");
@@ -258,7 +281,9 @@ public class FrmMenuUtama extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
         );
 
         pack();
@@ -301,6 +326,12 @@ public class FrmMenuUtama extends javax.swing.JFrame {
         // TODO add your handling code here:
         new FrmPenjualan().setVisible(true);
     }//GEN-LAST:event_mnuPenjualanActionPerformed
+
+    private void formWindowActivated(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowActivated
+        // TODO add your handling code here:
+        ImageIcon icon = new ImageIcon("./gambar/mainicon.png");
+        setIconImage(icon.getImage());
+    }//GEN-LAST:event_formWindowActivated
 
     /**
      * @param args the command line arguments

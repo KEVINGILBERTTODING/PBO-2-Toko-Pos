@@ -88,6 +88,7 @@ public class FrmPenjualan extends javax.swing.JFrame {
         BtnKeluar.setIcon(new ImageIcon("./gambar/log_out.png"));
         BtnTambah.setIcon(new ImageIcon("./gambar/add.png"));
         BtnHapus.setIcon(new ImageIcon("./gambar/delete.png"));
+        BtnBaru.setIcon(new ImageIcon ("./gambar/New_16x16.png"));
     }
     
     private void setEdit(boolean yKodeJual, boolean yTglJual, boolean yKodeKonsumen,boolean yNamaKonsumen, boolean yKodeBarang, 
