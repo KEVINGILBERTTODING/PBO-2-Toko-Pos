@@ -7,29 +7,73 @@
         <Menu class="javax.swing.JMenu" name="mnuFile">
           <Properties>
             <Property name="text" type="java.lang.String" value="File"/>
+            <Property name="horizontalAlignment" type="int" value="0"/>
+            <Property name="horizontalTextPosition" type="int" value="0"/>
+            <Property name="verticalAlignment" type="int" value="3"/>
+            <Property name="verticalTextPosition" type="int" value="3"/>
           </Properties>
           <SubComponents>
             <MenuItem class="javax.swing.JMenuItem" name="mnuKeluar">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Keluar"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="mnuKeluarActionPerformed"/>
+              </Events>
             </MenuItem>
           </SubComponents>
         </Menu>
         <Menu class="javax.swing.JMenu" name="mnuMaster">
           <Properties>
             <Property name="text" type="java.lang.String" value="Master"/>
+            <Property name="horizontalAlignment" type="int" value="0"/>
+            <Property name="horizontalTextPosition" type="int" value="0"/>
+            <Property name="verticalAlignment" type="int" value="3"/>
+            <Property name="verticalTextPosition" type="int" value="3"/>
           </Properties>
+          <SubComponents>
+            <MenuItem class="javax.swing.JMenuItem" name="mnuKonsumen">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Konsumen"/>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="mnuKonsumenActionPerformed"/>
+              </Events>
+            </MenuItem>
+            <MenuItem class="javax.swing.JMenuItem" name="mnuSupplier">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Supplier"/>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="mnuSupplierActionPerformed"/>
+              </Events>
+            </MenuItem>
+            <MenuItem class="javax.swing.JMenuItem" name="mnuBarang">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Barang"/>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="mnuBarangActionPerformed"/>
+              </Events>
+            </MenuItem>
+          </SubComponents>
         </Menu>
         <Menu class="javax.swing.JMenu" name="mnuTransaksi">
           <Properties>
             <Property name="text" type="java.lang.String" value="Transaksi"/>
+            <Property name="horizontalAlignment" type="int" value="0"/>
+            <Property name="horizontalTextPosition" type="int" value="0"/>
+            <Property name="verticalAlignment" type="int" value="3"/>
+            <Property name="verticalTextPosition" type="int" value="3"/>
           </Properties>
           <SubComponents>
             <MenuItem class="javax.swing.JMenuItem" name="mnuPenjualan">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Penjualan"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="mnuPenjualanActionPerformed"/>
+              </Events>
             </MenuItem>
             <MenuItem class="javax.swing.JMenuItem" name="mnuPembelian">
               <Properties>
@@ -54,6 +98,10 @@
         <Menu class="javax.swing.JMenu" name="mnuLaporan">
           <Properties>
             <Property name="text" type="java.lang.String" value="Laporan"/>
+            <Property name="horizontalAlignment" type="int" value="0"/>
+            <Property name="horizontalTextPosition" type="int" value="0"/>
+            <Property name="verticalAlignment" type="int" value="3"/>
+            <Property name="verticalTextPosition" type="int" value="3"/>
           </Properties>
           <SubComponents>
             <MenuItem class="javax.swing.JMenuItem" name="mnuLapKonsumen">
@@ -102,6 +150,10 @@
         <Menu class="javax.swing.JMenu" name="mnuAbout">
           <Properties>
             <Property name="text" type="java.lang.String" value="About"/>
+            <Property name="horizontalAlignment" type="int" value="0"/>
+            <Property name="horizontalTextPosition" type="int" value="0"/>
+            <Property name="verticalAlignment" type="int" value="3"/>
+            <Property name="verticalTextPosition" type="int" value="3"/>
           </Properties>
         </Menu>
       </SubComponents>
@@ -136,10 +188,7 @@
     </DimensionLayout>
     <DimensionLayout dim="1">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Group type="102" alignment="0" attributes="0">
-              <Component id="jPanel1" min="-2" max="-2" attributes="0"/>
-              <EmptySpace min="0" pref="142" max="32767" attributes="0"/>
-          </Group>
+          <Component id="jPanel1" alignment="0" max="32767" attributes="0"/>
       </Group>
     </DimensionLayout>
   </Layout>
@@ -161,7 +210,7 @@
         </DimensionLayout>
         <DimensionLayout dim="1">
           <Group type="103" groupAlignment="0" attributes="0">
-              <EmptySpace min="0" pref="411" max="32767" attributes="0"/>
+              <EmptySpace min="0" pref="553" max="32767" attributes="0"/>
           </Group>
         </DimensionLayout>
       </Layout>
