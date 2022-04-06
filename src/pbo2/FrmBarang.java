@@ -445,7 +445,7 @@ JOptionPane.showMessageDialog(null, e.getMessage());
     private void BtnKeluarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnKeluarActionPerformed
         // TODO add your handling code here:
         
-        System.exit(0);
+        this.dispose();
     }//GEN-LAST:event_BtnKeluarActionPerformed
 
     private void mKodeBarangActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mKodeBarangActionPerformed
