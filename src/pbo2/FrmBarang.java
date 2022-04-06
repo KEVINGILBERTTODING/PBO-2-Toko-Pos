@@ -44,7 +44,7 @@ int pil;
     
     private void tampilIcon(){
         BtnTambah.setIcon(new
-        ImageIcon("./gambar/add.png"));
+        ImageIcon("./gambar/Add_16x16.png"));
         BtnKoreksi.setIcon(new
         ImageIcon("./gambar/edit.png"));
         BtnHapus.setIcon(new
@@ -52,7 +52,7 @@ int pil;
         BtnSimpan.setIcon(new
         ImageIcon("./gambar/save.png"));
         BtnBatal.setIcon(new
-        ImageIcon("./gambar/cancel.png"));
+        ImageIcon("./gambar/Cancel_16x16.png"));
         BtnKeluar.setIcon(new 
         ImageIcon("./gambar/log_out.png"));
         
@@ -319,6 +319,7 @@ JOptionPane.showMessageDialog(null, e.getMessage());
 
         jPanel2.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
+        BtnTambah.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
         BtnTambah.setText("Tambah");
         BtnTambah.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -326,6 +327,7 @@ JOptionPane.showMessageDialog(null, e.getMessage());
             }
         });
 
+        BtnKoreksi.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
         BtnKoreksi.setText("Koreksi");
         BtnKoreksi.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -333,6 +335,7 @@ JOptionPane.showMessageDialog(null, e.getMessage());
             }
         });
 
+        BtnHapus.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
         BtnHapus.setText("Hapus");
         BtnHapus.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -340,6 +343,7 @@ JOptionPane.showMessageDialog(null, e.getMessage());
             }
         });
 
+        BtnSimpan.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
         BtnSimpan.setText("Simpan");
         BtnSimpan.setEnabled(false);
         BtnSimpan.addActionListener(new java.awt.event.ActionListener() {
@@ -348,6 +352,7 @@ JOptionPane.showMessageDialog(null, e.getMessage());
             }
         });
 
+        BtnBatal.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
         BtnBatal.setText("Batal");
         BtnBatal.setEnabled(false);
         BtnBatal.addActionListener(new java.awt.event.ActionListener() {
@@ -356,6 +361,7 @@ JOptionPane.showMessageDialog(null, e.getMessage());
             }
         });
 
+        BtnKeluar.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
         BtnKeluar.setText("Keluar");
         BtnKeluar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -425,6 +431,7 @@ JOptionPane.showMessageDialog(null, e.getMessage());
         );
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void BtnBatalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnBatalActionPerformed

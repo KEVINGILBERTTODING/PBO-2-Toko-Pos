@@ -7,7 +7,7 @@
   </Properties>
   <SyntheticProperties>
     <SyntheticProperty name="formSizePolicy" type="int" value="1"/>
-    <SyntheticProperty name="generateCenter" type="boolean" value="false"/>
+    <SyntheticProperty name="generateCenter" type="boolean" value="true"/>
   </SyntheticProperties>
   <AuxValues>
     <AuxValue name="FormSettings_autoResourcing" type="java.lang.Integer" value="0"/>
@@ -314,6 +314,9 @@
       <SubComponents>
         <Component class="javax.swing.JButton" name="BtnTambah">
           <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Verdana" size="12" style="0"/>
+            </Property>
             <Property name="text" type="java.lang.String" value="Tambah"/>
           </Properties>
           <Events>
@@ -322,6 +325,9 @@
         </Component>
         <Component class="javax.swing.JButton" name="BtnKoreksi">
           <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Verdana" size="12" style="0"/>
+            </Property>
             <Property name="text" type="java.lang.String" value="Koreksi"/>
           </Properties>
           <Events>
@@ -330,6 +336,9 @@
         </Component>
         <Component class="javax.swing.JButton" name="BtnHapus">
           <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Verdana" size="12" style="0"/>
+            </Property>
             <Property name="text" type="java.lang.String" value="Hapus"/>
           </Properties>
           <Events>
@@ -338,6 +347,9 @@
         </Component>
         <Component class="javax.swing.JButton" name="BtnSimpan">
           <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Verdana" size="12" style="0"/>
+            </Property>
             <Property name="text" type="java.lang.String" value="Simpan"/>
             <Property name="enabled" type="boolean" value="false"/>
           </Properties>
@@ -347,6 +359,9 @@
         </Component>
         <Component class="javax.swing.JButton" name="BtnBatal">
           <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Verdana" size="12" style="0"/>
+            </Property>
             <Property name="text" type="java.lang.String" value="Batal"/>
             <Property name="enabled" type="boolean" value="false"/>
           </Properties>
@@ -356,6 +371,9 @@
         </Component>
         <Component class="javax.swing.JButton" name="BtnKeluar">
           <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Verdana" size="12" style="0"/>
+            </Property>
             <Property name="text" type="java.lang.String" value="Keluar"/>
           </Properties>
           <Events>

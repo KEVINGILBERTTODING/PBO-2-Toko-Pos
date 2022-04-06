@@ -153,6 +153,7 @@ public class FrmMenuUtama extends javax.swing.JFrame {
         mnuFile.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
         mnuFile.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
 
+        mnuKeluar.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
         mnuKeluar.setText("Keluar");
         mnuKeluar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -169,6 +170,7 @@ public class FrmMenuUtama extends javax.swing.JFrame {
         mnuMaster.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
         mnuMaster.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
 
+        mnuKonsumen.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
         mnuKonsumen.setText("Konsumen");
         mnuKonsumen.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -177,6 +179,7 @@ public class FrmMenuUtama extends javax.swing.JFrame {
         });
         mnuMaster.add(mnuKonsumen);
 
+        mnuSupplier.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
         mnuSupplier.setText("Supplier");
         mnuSupplier.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -185,6 +188,7 @@ public class FrmMenuUtama extends javax.swing.JFrame {
         });
         mnuMaster.add(mnuSupplier);
 
+        mnuBarang.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
         mnuBarang.setText("Barang");
         mnuBarang.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -201,6 +205,7 @@ public class FrmMenuUtama extends javax.swing.JFrame {
         mnuTransaksi.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
         mnuTransaksi.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
 
+        mnuPenjualan.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
         mnuPenjualan.setText("Penjualan");
         mnuPenjualan.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -209,12 +214,15 @@ public class FrmMenuUtama extends javax.swing.JFrame {
         });
         mnuTransaksi.add(mnuPenjualan);
 
+        mnuPembelian.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
         mnuPembelian.setText("Pembelian");
         mnuTransaksi.add(mnuPembelian);
 
+        mnuReturPenjualan.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
         mnuReturPenjualan.setText("Retur Penjualan");
         mnuTransaksi.add(mnuReturPenjualan);
 
+        mnuReturPembelian.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
         mnuReturPembelian.setText("Retur Pembelian");
         mnuReturPembelian.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -231,6 +239,7 @@ public class FrmMenuUtama extends javax.swing.JFrame {
         mnuLaporan.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
         mnuLaporan.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
 
+        mnuLapKonsumen.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
         mnuLapKonsumen.setText("Konsumen");
         mnuLapKonsumen.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -239,9 +248,11 @@ public class FrmMenuUtama extends javax.swing.JFrame {
         });
         mnuLaporan.add(mnuLapKonsumen);
 
+        mnuLapSupplier.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
         mnuLapSupplier.setText("Supplier");
         mnuLaporan.add(mnuLapSupplier);
 
+        mnuLapBarang.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
         mnuLapBarang.setText("Barang");
         mnuLapBarang.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -250,15 +261,19 @@ public class FrmMenuUtama extends javax.swing.JFrame {
         });
         mnuLaporan.add(mnuLapBarang);
 
+        mnuLapPenjualan.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
         mnuLapPenjualan.setText("Penjualan");
         mnuLaporan.add(mnuLapPenjualan);
 
+        mnuLapPembelian.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
         mnuLapPembelian.setText("Pembelian");
         mnuLaporan.add(mnuLapPembelian);
 
+        mnuLapReturPenjualan.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
         mnuLapReturPenjualan.setText("Retur Penjualan");
         mnuLaporan.add(mnuLapReturPenjualan);
 
+        mnuLapReturPembelian.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
         mnuLapReturPembelian.setText("Retur Pembelian");
         mnuLaporan.add(mnuLapReturPembelian);
 
