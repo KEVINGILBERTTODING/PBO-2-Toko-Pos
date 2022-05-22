@@ -216,6 +216,11 @@ public class FrmMenuUtama extends javax.swing.JFrame {
 
         mnuPembelian.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
         mnuPembelian.setText("Pembelian");
+        mnuPembelian.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                mnuPembelianActionPerformed(evt);
+            }
+        });
         mnuTransaksi.add(mnuPembelian);
 
         mnuReturPenjualan.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
@@ -347,6 +352,11 @@ public class FrmMenuUtama extends javax.swing.JFrame {
         ImageIcon icon = new ImageIcon("./gambar/mainicon.png");
         setIconImage(icon.getImage());
     }//GEN-LAST:event_formWindowActivated
+
+    private void mnuPembelianActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mnuPembelianActionPerformed
+        // TODO add your handling code here:
+        new FrmPembelian().setVisible(true);
+    }//GEN-LAST:event_mnuPembelianActionPerformed
 
     /**
      * @param args the command line arguments
