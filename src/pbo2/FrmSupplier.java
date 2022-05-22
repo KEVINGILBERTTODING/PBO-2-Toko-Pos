@@ -131,7 +131,7 @@ int pil;
 }
      
      private void koreksiData(){
-        String sql_edit = "update konsumen set namakonsumen='"+mNamaSupplier.getText()+"', alamatkonsumen='"+mAlamatSupplier.getText()+"', kotakonsumen='"+mKotaSupplier.getText()+ "', telpkonsumen='"+ mTelpSupplier.getText()+"', hpkonsumen='"+mHPSupplier.getText()+ "' where kodekonsumen='"+mKodeSupplier.getText()+"'";
+        String sql_edit = "update supplier set NamaSupplier='"+mNamaSupplier.getText()+"', alamatsupplier='"+mAlamatSupplier.getText()+"', kotasupplier='"+mKotaSupplier.getText()+ "', telpsupplier='"+ mTelpSupplier.getText()+"', hpsupplier='"+mHPSupplier.getText()+ "' where kodesupplier='"+mKodeSupplier.getText()+"'";
         try {
             statement.executeUpdate(sql_edit);
         } catch (Exception e) {
