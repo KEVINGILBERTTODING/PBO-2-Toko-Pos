@@ -15,6 +15,9 @@
           <SubComponents>
             <MenuItem class="javax.swing.JMenuItem" name="mnuKeluar">
               <Properties>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Verdana" size="12" style="0"/>
+                </Property>
                 <Property name="text" type="java.lang.String" value="Keluar"/>
               </Properties>
               <Events>
@@ -34,6 +37,9 @@
           <SubComponents>
             <MenuItem class="javax.swing.JMenuItem" name="mnuKonsumen">
               <Properties>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Verdana" size="12" style="0"/>
+                </Property>
                 <Property name="text" type="java.lang.String" value="Konsumen"/>
               </Properties>
               <Events>
@@ -42,6 +48,9 @@
             </MenuItem>
             <MenuItem class="javax.swing.JMenuItem" name="mnuSupplier">
               <Properties>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Verdana" size="12" style="0"/>
+                </Property>
                 <Property name="text" type="java.lang.String" value="Supplier"/>
               </Properties>
               <Events>
@@ -50,6 +59,9 @@
             </MenuItem>
             <MenuItem class="javax.swing.JMenuItem" name="mnuBarang">
               <Properties>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Verdana" size="12" style="0"/>
+                </Property>
                 <Property name="text" type="java.lang.String" value="Barang"/>
               </Properties>
               <Events>
@@ -69,6 +81,9 @@
           <SubComponents>
             <MenuItem class="javax.swing.JMenuItem" name="mnuPenjualan">
               <Properties>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Verdana" size="12" style="0"/>
+                </Property>
                 <Property name="text" type="java.lang.String" value="Penjualan"/>
               </Properties>
               <Events>
@@ -77,16 +92,25 @@
             </MenuItem>
             <MenuItem class="javax.swing.JMenuItem" name="mnuPembelian">
               <Properties>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Verdana" size="12" style="0"/>
+                </Property>
                 <Property name="text" type="java.lang.String" value="Pembelian"/>
               </Properties>
             </MenuItem>
             <MenuItem class="javax.swing.JMenuItem" name="mnuReturPenjualan">
               <Properties>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Verdana" size="12" style="0"/>
+                </Property>
                 <Property name="text" type="java.lang.String" value="Retur Penjualan"/>
               </Properties>
             </MenuItem>
             <MenuItem class="javax.swing.JMenuItem" name="mnuReturPembelian">
               <Properties>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Verdana" size="12" style="0"/>
+                </Property>
                 <Property name="text" type="java.lang.String" value="Retur Pembelian"/>
               </Properties>
               <Events>
@@ -106,6 +130,9 @@
           <SubComponents>
             <MenuItem class="javax.swing.JMenuItem" name="mnuLapKonsumen">
               <Properties>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Verdana" size="12" style="0"/>
+                </Property>
                 <Property name="text" type="java.lang.String" value="Konsumen"/>
               </Properties>
               <Events>
@@ -114,11 +141,17 @@
             </MenuItem>
             <MenuItem class="javax.swing.JMenuItem" name="mnuLapSupplier">
               <Properties>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Verdana" size="12" style="0"/>
+                </Property>
                 <Property name="text" type="java.lang.String" value="Supplier"/>
               </Properties>
             </MenuItem>
             <MenuItem class="javax.swing.JMenuItem" name="mnuLapBarang">
               <Properties>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Verdana" size="12" style="0"/>
+                </Property>
                 <Property name="text" type="java.lang.String" value="Barang"/>
               </Properties>
               <Events>
@@ -127,21 +160,33 @@
             </MenuItem>
             <MenuItem class="javax.swing.JMenuItem" name="mnuLapPenjualan">
               <Properties>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Verdana" size="12" style="0"/>
+                </Property>
                 <Property name="text" type="java.lang.String" value="Penjualan"/>
               </Properties>
             </MenuItem>
             <MenuItem class="javax.swing.JMenuItem" name="mnuLapPembelian">
               <Properties>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Verdana" size="12" style="0"/>
+                </Property>
                 <Property name="text" type="java.lang.String" value="Pembelian"/>
               </Properties>
             </MenuItem>
             <MenuItem class="javax.swing.JMenuItem" name="mnuLapReturPenjualan">
               <Properties>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Verdana" size="12" style="0"/>
+                </Property>
                 <Property name="text" type="java.lang.String" value="Retur Penjualan"/>
               </Properties>
             </MenuItem>
             <MenuItem class="javax.swing.JMenuItem" name="mnuLapReturPembelian">
               <Properties>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Verdana" size="12" style="0"/>
+                </Property>
                 <Property name="text" type="java.lang.String" value="Retur Pembelian"/>
               </Properties>
             </MenuItem>
@@ -168,6 +213,9 @@
     <SyntheticProperty name="formSizePolicy" type="int" value="1"/>
     <SyntheticProperty name="generateCenter" type="boolean" value="false"/>
   </SyntheticProperties>
+  <Events>
+    <EventHandler event="windowActivated" listener="java.awt.event.WindowListener" parameters="java.awt.event.WindowEvent" handler="formWindowActivated"/>
+  </Events>
   <AuxValues>
     <AuxValue name="FormSettings_autoResourcing" type="java.lang.Integer" value="0"/>
     <AuxValue name="FormSettings_autoSetComponentName" type="java.lang.Boolean" value="false"/>
@@ -188,7 +236,10 @@
     </DimensionLayout>
     <DimensionLayout dim="1">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Component id="jPanel1" alignment="0" max="32767" attributes="0"/>
+          <Group type="102" alignment="0" attributes="0">
+              <Component id="jPanel1" max="32767" attributes="0"/>
+              <EmptySpace max="-2" attributes="0"/>
+          </Group>
       </Group>
     </DimensionLayout>
   </Layout>
@@ -210,7 +261,7 @@
         </DimensionLayout>
         <DimensionLayout dim="1">
           <Group type="103" groupAlignment="0" attributes="0">
-              <EmptySpace min="0" pref="553" max="32767" attributes="0"/>
+              <EmptySpace min="0" pref="542" max="32767" attributes="0"/>
           </Group>
         </DimensionLayout>
       </Layout>

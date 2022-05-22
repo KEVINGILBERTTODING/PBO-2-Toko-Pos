@@ -48,7 +48,7 @@ int pil;
         BtnSimpan.setIcon(new
         ImageIcon("./gambar/save.png"));
         BtnBatal.setIcon(new
-        ImageIcon("./gambar/cancel.png"));
+        ImageIcon("./gambar/Cancel_16x16.png"));
         BtnKeluar.setIcon(new 
         ImageIcon("./gambar/log_out.png"));
 }
@@ -131,7 +131,7 @@ int pil;
 }
      
      private void koreksiData(){
-        String sql_edit = "update konsumen set namakonsumen='"+mNamaSupplier.getText()+"', alamatkonsumen='"+mAlamatSupplier.getText()+"', kotakonsumen='"+mKotaSupplier.getText()+ "', telpkonsumen='"+ mTelpSupplier.getText()+"', hpkonsumen='"+mHPSupplier.getText()+ "' where kodekonsumen='"+mKodeSupplier.getText()+"'";
+        String sql_edit = "update supplier set NamaSupplier='"+mNamaSupplier.getText()+"', alamatsupplier='"+mAlamatSupplier.getText()+"', kotasupplier='"+mKotaSupplier.getText()+ "', telpsupplier='"+ mTelpSupplier.getText()+"', hpsupplier='"+mHPSupplier.getText()+ "' where kodesupplier='"+mKodeSupplier.getText()+"'";
         try {
             statement.executeUpdate(sql_edit);
         } catch (Exception e) {
@@ -171,32 +171,40 @@ JOptionPane.showMessageDialog(null, e.getMessage());
         mKotaSupplier = new javax.swing.JTextField();
         mTelpSupplier = new javax.swing.JTextField();
         mHPSupplier = new javax.swing.JTextField();
-        BtnTambah = new javax.swing.JButton();
-        BtnKoreksi = new javax.swing.JButton();
-        BtnHapus = new javax.swing.JButton();
-        BtnSimpan = new javax.swing.JButton();
-        BtnBatal = new javax.swing.JButton();
-        BtnKeluar = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         tabelSupplier = new javax.swing.JTable();
+        jPanel2 = new javax.swing.JPanel();
+        BtnKeluar = new javax.swing.JButton();
+        BtnBatal = new javax.swing.JButton();
+        BtnSimpan = new javax.swing.JButton();
+        BtnHapus = new javax.swing.JButton();
+        BtnKoreksi = new javax.swing.JButton();
+        BtnTambah = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Pendataan Supplier");
 
         jPanel1.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
+        jLabel1.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
         jLabel1.setText("Kode Supplier");
 
+        jLabel2.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
         jLabel2.setText("Nama Supplier");
 
+        jLabel3.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
         jLabel3.setText("Alamat");
 
+        jLabel4.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
         jLabel4.setText("Kota");
 
+        jLabel5.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
         jLabel5.setText("Telp");
 
+        jLabel6.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
         jLabel6.setText("HP");
 
+        mKodeSupplier.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
         mKodeSupplier.setEnabled(false);
         mKodeSupplier.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -204,14 +212,19 @@ JOptionPane.showMessageDialog(null, e.getMessage());
             }
         });
 
+        mNamaSupplier.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
         mNamaSupplier.setEnabled(false);
 
+        mAlamatSupplier.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
         mAlamatSupplier.setEnabled(false);
 
+        mKotaSupplier.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
         mKotaSupplier.setEnabled(false);
 
+        mTelpSupplier.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
         mTelpSupplier.setEnabled(false);
 
+        mHPSupplier.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
         mHPSupplier.setEnabled(false);
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
@@ -236,7 +249,7 @@ JOptionPane.showMessageDialog(null, e.getMessage());
                     .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                         .addComponent(mHPSupplier, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 159, Short.MAX_VALUE)
                         .addComponent(mTelpSupplier, javax.swing.GroupLayout.Alignment.LEADING)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(666, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -268,56 +281,10 @@ JOptionPane.showMessageDialog(null, e.getMessage());
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        BtnTambah.setText("Tambah");
-        BtnTambah.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                BtnTambahActionPerformed(evt);
-            }
-        });
-
-        BtnKoreksi.setText("Koreksi");
-        BtnKoreksi.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                BtnKoreksiActionPerformed(evt);
-            }
-        });
-
-        BtnHapus.setText("Hapus");
-        BtnHapus.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                BtnHapusActionPerformed(evt);
-            }
-        });
-
-        BtnSimpan.setText("Simpan");
-        BtnSimpan.setEnabled(false);
-        BtnSimpan.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                BtnSimpanActionPerformed(evt);
-            }
-        });
-
-        BtnBatal.setText("Batal");
-        BtnBatal.setEnabled(false);
-        BtnBatal.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                BtnBatalActionPerformed(evt);
-            }
-        });
-
-        BtnKeluar.setText("Keluar");
-        BtnKeluar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                BtnKeluarActionPerformed(evt);
-            }
-        });
-
+        tabelSupplier.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
         tabelSupplier.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null}
+
             },
             new String [] {
                 "Kode", "Nama", "Alamat", "Kota", "Telp.", "HP"
@@ -330,28 +297,101 @@ JOptionPane.showMessageDialog(null, e.getMessage());
         });
         jScrollPane1.setViewportView(tabelSupplier);
 
+        jPanel2.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+
+        BtnKeluar.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
+        BtnKeluar.setText("Keluar");
+        BtnKeluar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BtnKeluarActionPerformed(evt);
+            }
+        });
+
+        BtnBatal.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
+        BtnBatal.setText("Batal");
+        BtnBatal.setEnabled(false);
+        BtnBatal.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BtnBatalActionPerformed(evt);
+            }
+        });
+
+        BtnSimpan.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
+        BtnSimpan.setText("Simpan");
+        BtnSimpan.setEnabled(false);
+        BtnSimpan.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BtnSimpanActionPerformed(evt);
+            }
+        });
+
+        BtnHapus.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
+        BtnHapus.setText("Hapus");
+        BtnHapus.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BtnHapusActionPerformed(evt);
+            }
+        });
+
+        BtnKoreksi.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
+        BtnKoreksi.setText("Koreksi");
+        BtnKoreksi.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BtnKoreksiActionPerformed(evt);
+            }
+        });
+
+        BtnTambah.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
+        BtnTambah.setText("Tambah");
+        BtnTambah.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BtnTambahActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
+        jPanel2.setLayout(jPanel2Layout);
+        jPanel2Layout.setHorizontalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(BtnTambah)
+                .addGap(18, 18, 18)
+                .addComponent(BtnKoreksi)
+                .addGap(18, 18, 18)
+                .addComponent(BtnHapus)
+                .addGap(18, 18, 18)
+                .addComponent(BtnSimpan)
+                .addGap(18, 18, 18)
+                .addComponent(BtnBatal)
+                .addGap(18, 18, 18)
+                .addComponent(BtnKeluar)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        jPanel2Layout.setVerticalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addGap(23, 23, 23)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(BtnTambah)
+                    .addComponent(BtnKoreksi)
+                    .addComponent(BtnHapus)
+                    .addComponent(BtnSimpan)
+                    .addComponent(BtnBatal)
+                    .addComponent(BtnKeluar))
+                .addContainerGap(24, Short.MAX_VALUE))
+        );
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
+                .addGap(10, 10, 10)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(78, 78, 78)
-                        .addComponent(BtnTambah)
-                        .addGap(18, 18, 18)
-                        .addComponent(BtnKoreksi)
-                        .addGap(18, 18, 18)
-                        .addComponent(BtnHapus)
-                        .addGap(18, 18, 18)
-                        .addComponent(BtnSimpan)
-                        .addGap(18, 18, 18)
-                        .addComponent(BtnBatal)
-                        .addGap(18, 18, 18)
-                        .addComponent(BtnKeluar)
-                        .addGap(0, 126, Short.MAX_VALUE))
+                    .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.TRAILING))
+                    .addComponent(jScrollPane1))
                 .addContainerGap())
         );
         layout.setVerticalGroup(
@@ -360,19 +400,14 @@ JOptionPane.showMessageDialog(null, e.getMessage());
                 .addGap(6, 6, 6)
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(BtnTambah)
-                    .addComponent(BtnKoreksi)
-                    .addComponent(BtnHapus)
-                    .addComponent(BtnSimpan)
-                    .addComponent(BtnBatal)
-                    .addComponent(BtnKeluar))
-                .addContainerGap())
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 355, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void BtnBatalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnBatalActionPerformed
@@ -615,6 +650,7 @@ JOptionPane.showMessageDialog(null, e.getMessage());
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel2;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTextField mAlamatSupplier;
     private javax.swing.JTextField mHPSupplier;
