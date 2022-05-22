@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 30, 2022 at 02:02 AM
+-- Generation Time: May 22, 2022 at 10:45 AM
 -- Server version: 10.4.22-MariaDB
 -- PHP Version: 8.0.13
 
@@ -41,9 +41,8 @@ CREATE TABLE `barang` (
 --
 
 INSERT INTO `barang` (`KodeBarang`, `NamaBarang`, `HargaBeliBarang`, `HargaJualBarang`, `StokBarang`, `StokMinBarang`) VALUES
-('3233', 'adasd', 2121, 1212, 3133, 434354),
-('BOO1', 'Penghapuss', 12000, 50000, 121, 122),
-('BOO3', 'penghapus', 5000, 6000, 121, 2);
+('B001', 'Pensil', 5000, 7000, 12, 5),
+('B002', 'Sepatu Adidas Superstar', 200000, 220000, 12, 2);
 
 -- --------------------------------------------------------
 
@@ -70,6 +69,22 @@ CREATE TABLE `dpenjualan` (
   `HargaJualBarang` int(11) DEFAULT NULL,
   `JmlJualBarang` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `dpenjualan`
+--
+
+INSERT INTO `dpenjualan` (`KodePenjualan`, `KodeBarang`, `HargaJualBarang`, `JmlJualBarang`) VALUES
+('', 'B004', 140000, 3),
+('2333', '3233', 1212, 20),
+('B00009', 'BOO3', 6000, 2),
+('B00009', 'B004', 140000, 2),
+('1022', 'BOO1', 50000, 12),
+('B0003', 'BOO1', 50000, 15),
+('P0002', 'BOO1', 50000, 23),
+('P0002', 'B004', 140000, 56),
+('P003', 'B003', 50000, 23),
+('K001', 'B001', 7000, 6);
 
 -- --------------------------------------------------------
 
@@ -117,7 +132,7 @@ CREATE TABLE `konsumen` (
 --
 
 INSERT INTO `konsumen` (`KodeKonsumen`, `NamaKonsumen`, `AlamatKonsumen`, `KotaKonsumen`, `TelpKonsumen`, `HpKonsumen`) VALUES
-('1002', 'Kevin gilbert', 'Jl. Gajah', '1002', '090293', '090293023');
+('KD001', 'Kevin Gilbert', 'Jl. Pahlawan', 'Rantepao', '09090922', '989897');
 
 -- --------------------------------------------------------
 
@@ -142,6 +157,14 @@ CREATE TABLE `penjualan` (
   `KodeKonsumen` varchar(10) DEFAULT NULL,
   `TglPenjualan` date DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `penjualan`
+--
+
+INSERT INTO `penjualan` (`KodePenjualan`, `KodeKonsumen`, `TglPenjualan`) VALUES
+('K001', 'KD002', '2022-05-22'),
+('P001', 'K002', '2022-04-13');
 
 -- --------------------------------------------------------
 
@@ -181,6 +204,13 @@ CREATE TABLE `supplier` (
   `TelpSupplier` varchar(15) DEFAULT NULL,
   `HpSupplier` varchar(15) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `supplier`
+--
+
+INSERT INTO `supplier` (`KodeSupplier`, `NamaSupplier`, `AlamatSupplier`, `KotaSupplier`, `TelpSupplier`, `HpSupplier`) VALUES
+('S001', 'Kevin Gilbert Toding', 'Jl. Ahmad Yani', 'Rantepao', '08232', '0923232222');
 
 --
 -- Indexes for dumped tables
