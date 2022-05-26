@@ -225,6 +225,11 @@ public class FrmMenuUtama extends javax.swing.JFrame {
 
         mnuReturPenjualan.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
         mnuReturPenjualan.setText("Retur Penjualan");
+        mnuReturPenjualan.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                mnuReturPenjualanActionPerformed(evt);
+            }
+        });
         mnuTransaksi.add(mnuReturPenjualan);
 
         mnuReturPembelian.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
@@ -357,6 +362,11 @@ public class FrmMenuUtama extends javax.swing.JFrame {
         // TODO add your handling code here:
         new FrmPembelian().setVisible(true);
     }//GEN-LAST:event_mnuPembelianActionPerformed
+
+    private void mnuReturPenjualanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mnuReturPenjualanActionPerformed
+        // TODO add your handling code here:
+        new FrmReturPenjualan().setVisible(true);
+    }//GEN-LAST:event_mnuReturPenjualanActionPerformed
 
     /**
      * @param args the command line arguments

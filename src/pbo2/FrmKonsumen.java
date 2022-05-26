@@ -31,10 +31,8 @@ int pil;
 
     public FrmKonsumen() {
         initComponents();
-         
         k = new koneksi();
         tampilIcon();
-       
         tampilTabel();
     }
     
