@@ -9,6 +9,9 @@ import java.util.HashMap;
 import java.util.Map;
 import javax.swing.JFrame;
 import javax.swing.ImageIcon;
+import net.sf.jasperreports.engine.JasperFillManager;
+import net.sf.jasperreports.engine.JasperPrint;
+import net.sf.jasperreports.view.JasperViewer;
 //import net.sf.jasperreports.engine.JasperFillManager;
 //import net.sf.jasperreports.engine.JasperPrint;
 //import net.sf.jasperreports.view.JasperViewer;
@@ -320,6 +323,13 @@ public class FrmMenuUtama extends javax.swing.JFrame {
 
     private void mnuLapKonsumenActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mnuLapKonsumenActionPerformed
         // TODO add your handling code here:
+         String filename = "src/pbo2/LapKonsumen.jasper";
+        Map param = new HashMap();
+        try {
+        JasperPrint cetak = JasperFillManager.fillReport(filename, param, k.con);
+        JasperViewer.viewReport(cetak, false);
+        } catch (Exception e){
+        }
     }//GEN-LAST:event_mnuLapKonsumenActionPerformed
 
     private void mnuLapBarangActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mnuLapBarangActionPerformed

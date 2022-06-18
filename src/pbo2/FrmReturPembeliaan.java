@@ -4,7 +4,6 @@
  * and open the template in the editor.
  */
 package pbo2;
-
 import java.sql.ResultSet;
 import java.sql.Statement;
 import javax.swing.JOptionPane;
@@ -14,11 +13,12 @@ import java.text.DecimalFormat;
 import java.text.DecimalFormatSymbols;
 import java.util.Calendar;
 import java.util.Date;
+
 /**
  *
  * @author bagus
  */
-public class FrmReturPenjualan extends javax.swing.JFrame {
+public class FrmReturPembeliaan extends javax.swing.JFrame {
     koneksi k;
     Statement statement;
     ResultSet resultSet; 
@@ -26,14 +26,14 @@ public class FrmReturPenjualan extends javax.swing.JFrame {
     String tanggal;
 
     /**
-     * Creates new form FrmReturPenjualan
+     * Creates new form FrmReturPembeliaan
      */
-    public FrmReturPenjualan() {
+    public FrmReturPembeliaan() {
         initComponents();
         k = new koneksi(); 
         tampilIcon();
         tampilTabel();
-        bacaPenjualan();
+        bacaPembelian();
         bacaBarang();
     }
     private void format_tanggal()
@@ -48,7 +48,7 @@ public class FrmReturPenjualan extends javax.swing.JFrame {
     }
     private void bersihTabel()
     {
-    DefaultTableModel modelBarang = (DefaultTableModel)tabelReturJual.getModel();
+    DefaultTableModel modelBarang = (DefaultTableModel)tabelReturBeli.getModel();
     int brs = modelBarang.getRowCount();
     if (brs>0){
     for (int i = brs-1; i >=0; i--) { 
@@ -58,18 +58,18 @@ public class FrmReturPenjualan extends javax.swing.JFrame {
         }
     }
     private void bersih(){
-        mKodeReturJual.setText(null); 
-        cKodePenjualan.setSelectedIndex(0); 
-        mNamaKonsumen.setText(null);
-        cKodeBarang.setSelectedIndex(0);
-        mNamaBarang.setText(null);
-        mHargaBarang.setText(null); 
-        mJmlReturJual.setText(null);
-        mSubTotalBarang.setText(null); 
-        mTotal.setText(null); 
-        mBayar.setText(null);
-        mKembali.setText(null);
-        sTglReturJual.setValue(new Date());
+    mKodeReturBeli.setText(null); 
+    cKodePembeliaan.setSelectedIndex(0); 
+    mNamaSupplier.setText(null);
+    cKodeBarang.setSelectedIndex(0);
+    mNamaBarang.setText(null);
+    mHargaBarang.setText(null); 
+    mJmlReturBeli.setText(null);
+    mSubTotalBarang.setText(null); 
+    mTotal.setText(null); 
+    mBayar.setText(null);
+    mKembali.setText(null);
+    sTglReturBeli.setValue(new Date());
     }
     private void tampilIcon(){
         btnBaru.setIcon(new ImageIcon("./gambar/new_16x16.png"));
@@ -79,40 +79,39 @@ public class FrmReturPenjualan extends javax.swing.JFrame {
         btnTambah.setIcon(new ImageIcon("./gambar/add_16x16.png"));
         btnHapus.setIcon(new ImageIcon("./gambar/delete.png"));
     }
-    private void setEdit(boolean yKodeReturJual, boolean yTglReturJual, boolean yKodePenjualan,boolean yNamaKonsumen, boolean yKodeBarang, boolean yNamaBarang, boolean yHargaBarang, boolean yJmlJual, boolean ySubTotalBarang, boolean yTotal, boolean yBayar, boolean yKembali){
-        mKodeReturJual.setEnabled(yKodeReturJual); 
-        sTglReturJual.setEnabled(yTglReturJual); 
-        cKodePenjualan.setEnabled(yKodePenjualan);
-        mNamaKonsumen.setEnabled(yNamaKonsumen); 
-        cKodeBarang.setEnabled(yKodeBarang); 
-        mNamaBarang.setEnabled(yNamaBarang); 
-        mHargaBarang.setEnabled(yHargaBarang); 
-        mJmlReturJual.setEnabled(yJmlJual); 
-        mSubTotalBarang.setEnabled(ySubTotalBarang);
-        mTotal.setEnabled(yTotal); 
-        mBayar.setEnabled(yBayar); 
-        mKembali.setEnabled(yKembali);
+    private void setEdit(boolean yKodeReturBeli, boolean yTglReturBeli, boolean yKodePembeliaan,boolean yNamaSupplier, boolean yKodeBarang, boolean yNamaBarang, boolean yHargaBarang, boolean yJmlReturBeli, boolean ySubTotalBarang, boolean yTotal, boolean yBayar, boolean yKembali){
+    mKodeReturBeli.setEnabled(yKodeReturBeli); 
+    sTglReturBeli.setEnabled(yTglReturBeli); 
+    cKodePembeliaan.setEnabled(yKodePembeliaan);
+    mNamaSupplier.setEnabled(yNamaSupplier); 
+    cKodeBarang.setEnabled(yKodeBarang); 
+    mNamaBarang.setEnabled(yNamaBarang); 
+    mHargaBarang.setEnabled(yHargaBarang); 
+    mJmlReturBeli.setEnabled(yJmlReturBeli); 
+    mSubTotalBarang.setEnabled(ySubTotalBarang);
+    mTotal.setEnabled(yTotal); 
+    mBayar.setEnabled(yBayar); 
+    mKembali.setEnabled(yKembali);
     }
     private void setTombol(boolean xBaru, boolean xSimpan, boolean xBatal,boolean xKeluar, boolean xTambah, boolean xHapus){
-        btnBaru.setEnabled(xBaru); 
-        btnSimpan.setEnabled(xSimpan); 
-        btnBatal.setEnabled(xBatal);
-        btnKeluar.setEnabled(xKeluar);
-        btnTambah.setEnabled(xTambah); 
-        btnHapus.setEnabled(xHapus);
+    btnBaru.setEnabled(xBaru); 
+    btnSimpan.setEnabled(xSimpan); 
+    btnBatal.setEnabled(xBatal);
+    btnKeluar.setEnabled(xKeluar);
+    btnTambah.setEnabled(xTambah); 
+    btnHapus.setEnabled(xHapus);
     }
     public void uangRp() {
-        String tampung_harga = mHargaBarang.getText();
-        try {
-            double harga = Double.parseDouble(mHargaBarang.getText());
-            DecimalFormat df = (DecimalFormat) DecimalFormat.getCurrencyInstance();
-            DecimalFormatSymbols dfs = new DecimalFormatSymbols(); dfs.setCurrencySymbol(""); dfs.setMonetaryDecimalSeparator(','); dfs.setGroupingSeparator('.'); df.setDecimalFormatSymbols(dfs);
-            String hsl = "Rp." + df.format(harga);
-            mHargaBarang.setText(hsl);
-            
-        } catch (Exception e) {
-            JOptionPane.showMessageDialog(null, "Pengisian harga tidak boleh kosong");
-        }
+    String tampung_harga = mHargaBarang.getText();
+    try {
+    double harga = Double.parseDouble(mHargaBarang.getText());
+    DecimalFormat df = (DecimalFormat) DecimalFormat.getCurrencyInstance();
+    DecimalFormatSymbols dfs = new DecimalFormatSymbols(); dfs.setCurrencySymbol(""); dfs.setMonetaryDecimalSeparator(','); dfs.setGroupingSeparator('.'); df.setDecimalFormatSymbols(dfs);
+    String hsl = "Rp." + df.format(harga);
+    mHargaBarang.setText(hsl);
+    } catch (Exception e) {
+    JOptionPane.showMessageDialog(null, "Pengisian harga tidak boleh kosong");
+    }
     }
     private void tampilTabel(){
     Object header[]={"Kode Barang","Nama Barang","Harga Barang","Qty","Sub Total"};
@@ -125,10 +124,10 @@ public class FrmReturPenjualan extends javax.swing.JFrame {
     return false;
     }
     };
-    tabelReturJual.setModel(modelBarang);
+    tabelReturBeli.setModel(modelBarang);
     }
     private void jmlTotal(){
-    DefaultTableModel modelBarang = (DefaultTableModel)tabelReturJual.getModel();
+    DefaultTableModel modelBarang = (DefaultTableModel)tabelReturBeli.getModel();
     int brs = modelBarang.getRowCount();
     int subTot = 0;
     for (int i = 0; i < brs; i++) {
@@ -137,14 +136,14 @@ public class FrmReturPenjualan extends javax.swing.JFrame {
     }
     mTotal.setText(String.valueOf(subTot));
     }
-    private void bacaPenjualan(){
-    String sql_select = "SELECT penjualan.*,konsumen.namakonsumen FROM penjualan JOIN konsumen ON penjualan.kodekonsumen=konsumen.kodekonsumen ";
+    private void bacaPembelian(){
+    String sql_select = "SELECT pembelian.*,supplier.namasupplier FROM pembelian JOIN supplier ON pembelian.kodesupplier=supplier.kodesupplier ";
     try {
     statement = k.con.createStatement();
     resultSet = statement.executeQuery(sql_select);
     resultSet.beforeFirst();
     while(resultSet.next()){
-        cKodePenjualan.addItem(resultSet.getString(1));
+        cKodePembeliaan.addItem(resultSet.getString(1));
     }
     } catch (Exception e) {
     JOptionPane.showMessageDialog(null, e.getMessage());
@@ -177,14 +176,14 @@ public class FrmReturPenjualan extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
-        mKodeReturJual = new javax.swing.JTextField();
-        sTglReturJual = new javax.swing.JSpinner();
+        mKodeReturBeli = new javax.swing.JTextField();
+        sTglReturBeli = new javax.swing.JSpinner();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
-        mNamaKonsumen = new javax.swing.JTextField();
-        cKodePenjualan = new javax.swing.JComboBox<>();
-        mKodeKonsumen = new javax.swing.JTextField();
+        mNamaSupplier = new javax.swing.JTextField();
+        cKodePembeliaan = new javax.swing.JComboBox<>();
         jLabel13 = new javax.swing.JLabel();
+        mKodeSupplier1 = new javax.swing.JTextField();
         jPanel2 = new javax.swing.JPanel();
         jLabel5 = new javax.swing.JLabel();
         cKodeBarang = new javax.swing.JComboBox<>();
@@ -193,14 +192,14 @@ public class FrmReturPenjualan extends javax.swing.JFrame {
         jLabel7 = new javax.swing.JLabel();
         mHargaBarang = new javax.swing.JTextField();
         jLabel8 = new javax.swing.JLabel();
-        mJmlReturJual = new javax.swing.JTextField();
+        mJmlReturBeli = new javax.swing.JTextField();
         jLabel9 = new javax.swing.JLabel();
         mSubTotalBarang = new javax.swing.JTextField();
         btnTambah = new javax.swing.JButton();
         btnHapus = new javax.swing.JButton();
         jPanel3 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        tabelReturJual = new javax.swing.JTable();
+        tabelReturBeli = new javax.swing.JTable();
         btnSimpan = new javax.swing.JButton();
         btnBatal = new javax.swing.JButton();
         btnKeluar = new javax.swing.JButton();
@@ -213,108 +212,111 @@ public class FrmReturPenjualan extends javax.swing.JFrame {
         mKembali = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setTitle("Form Retur Penjualan");
+        setTitle("Form Retur Pembelian");
 
         jPanel1.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.LOWERED, java.awt.Color.gray, java.awt.Color.gray, java.awt.Color.gray, java.awt.Color.gray));
 
         jLabel1.setFont(new java.awt.Font("Arial Rounded MT Bold", 1, 12)); // NOI18N
-        jLabel1.setText("Kode Retur Penjualan");
+        jLabel1.setText("Kode Retur Beli");
 
         jLabel2.setFont(new java.awt.Font("Arial Rounded MT Bold", 1, 12)); // NOI18N
-        jLabel2.setText("Tgl Retur Penjualan");
+        jLabel2.setText("Tanggal Retur Beli");
 
-        mKodeReturJual.setEnabled(false);
-        mKodeReturJual.addActionListener(new java.awt.event.ActionListener() {
+        mKodeReturBeli.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(102, 102, 255), 2));
+        mKodeReturBeli.setEnabled(false);
+        mKodeReturBeli.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                mKodeReturJualActionPerformed(evt);
+                mKodeReturBeliActionPerformed(evt);
             }
         });
 
-        sTglReturJual.setModel(new javax.swing.SpinnerDateModel(new java.util.Date(1620274020000L), null, null, java.util.Calendar.DAY_OF_WEEK_IN_MONTH));
-        sTglReturJual.setEditor(new javax.swing.JSpinner.DateEditor(sTglReturJual, "dd-MMMM-yyyy"));
-        sTglReturJual.setEnabled(false);
+        sTglReturBeli.setModel(new javax.swing.SpinnerDateModel(new java.util.Date(1620274020000L), null, null, java.util.Calendar.DAY_OF_WEEK_IN_MONTH));
+        sTglReturBeli.setEditor(new javax.swing.JSpinner.DateEditor(sTglReturBeli, "dd-MMMM-yyyy"));
+        sTglReturBeli.setEnabled(false);
 
         jLabel3.setFont(new java.awt.Font("Arial Rounded MT Bold", 1, 12)); // NOI18N
-        jLabel3.setText("Kode Penjualan");
+        jLabel3.setText("Kode Pembeliaan");
 
         jLabel4.setFont(new java.awt.Font("Arial Rounded MT Bold", 1, 12)); // NOI18N
-        jLabel4.setText("Nama Konsumen");
+        jLabel4.setText("Nama Supplier");
 
-        mNamaKonsumen.setEnabled(false);
-        mNamaKonsumen.addActionListener(new java.awt.event.ActionListener() {
+        mNamaSupplier.setEnabled(false);
+        mNamaSupplier.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                mNamaKonsumenActionPerformed(evt);
+                mNamaSupplierActionPerformed(evt);
             }
         });
 
-        cKodePenjualan.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "--Pilih--", " " }));
-        cKodePenjualan.setEnabled(false);
-        cKodePenjualan.addActionListener(new java.awt.event.ActionListener() {
+        cKodePembeliaan.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "--Pilih--", " " }));
+        cKodePembeliaan.setEnabled(false);
+        cKodePembeliaan.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                cKodePenjualanActionPerformed(evt);
-            }
-        });
-
-        mKodeKonsumen.setEnabled(false);
-        mKodeKonsumen.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                mKodeKonsumenActionPerformed(evt);
+                cKodePembeliaanActionPerformed(evt);
             }
         });
 
         jLabel13.setFont(new java.awt.Font("Arial Rounded MT Bold", 1, 12)); // NOI18N
-        jLabel13.setText("Kode Konsumen");
+        jLabel13.setText("Kode Supplier");
+
+        mKodeSupplier1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(153, 153, 255), 2));
+        mKodeSupplier1.setCaretColor(new java.awt.Color(153, 153, 255));
+        mKodeSupplier1.setEnabled(false);
+        mKodeSupplier1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                mKodeSupplier1ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+            .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel1)
-                    .addComponent(jLabel2))
-                .addGap(36, 36, 36)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(sTglReturJual, javax.swing.GroupLayout.DEFAULT_SIZE, 166, Short.MAX_VALUE)
-                    .addComponent(mKodeReturJual))
-                .addGap(383, 383, 383)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(jLabel1)
+                        .addGap(36, 36, 36)
+                        .addComponent(mKodeReturBeli))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(jLabel2)
+                        .addGap(18, 18, 18)
+                        .addComponent(sTglReturBeli, javax.swing.GroupLayout.PREFERRED_SIZE, 173, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel4)
-                    .addComponent(jLabel13)
-                    .addComponent(jLabel3))
-                .addGap(13, 13, 13)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(cKodePenjualan, 0, 264, Short.MAX_VALUE)
-                    .addComponent(mNamaKonsumen)
-                    .addComponent(mKodeKonsumen, javax.swing.GroupLayout.Alignment.TRAILING))
-                .addContainerGap())
+                    .addComponent(jLabel3)
+                    .addComponent(jLabel13))
+                .addGap(36, 36, 36)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(mNamaSupplier)
+                    .addComponent(cKodePembeliaan, 0, 217, Short.MAX_VALUE)
+                    .addComponent(mKodeSupplier1))
+                .addGap(21, 21, 21))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(10, 10, 10)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel1)
+                    .addComponent(mKodeReturBeli, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel3)
+                    .addComponent(cKodePembeliaan, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(jLabel2)
+                        .addComponent(sTglReturBeli, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(10, 10, 10)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel3)
-                            .addComponent(cKodePenjualan, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(mKodeReturJual, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel1))
-                        .addGap(18, 18, 18)
+                            .addComponent(jLabel13)
+                            .addComponent(mKodeSupplier1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(23, 23, 23)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(mKodeKonsumen, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel13))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(mNamaKonsumen, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel4)))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(60, 60, 60)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel2)
-                            .addComponent(sTglReturJual, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addContainerGap(32, Short.MAX_VALUE))
+                            .addComponent(jLabel4)
+                            .addComponent(mNamaSupplier, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addContainerGap(17, Short.MAX_VALUE))
         );
 
         jPanel2.setBorder(javax.swing.BorderFactory.createEtchedBorder(javax.swing.border.EtchedBorder.RAISED, java.awt.Color.lightGray, java.awt.Color.lightGray));
@@ -341,7 +343,7 @@ public class FrmReturPenjualan extends javax.swing.JFrame {
         });
 
         jLabel7.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 12)); // NOI18N
-        jLabel7.setText("Harga");
+        jLabel7.setText("Harga Barang");
 
         mHargaBarang.setEnabled(false);
         mHargaBarang.addActionListener(new java.awt.event.ActionListener() {
@@ -353,10 +355,10 @@ public class FrmReturPenjualan extends javax.swing.JFrame {
         jLabel8.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 12)); // NOI18N
         jLabel8.setText("Qty");
 
-        mJmlReturJual.setEnabled(false);
-        mJmlReturJual.addActionListener(new java.awt.event.ActionListener() {
+        mJmlReturBeli.setEnabled(false);
+        mJmlReturBeli.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                mJmlReturJualActionPerformed(evt);
+                mJmlReturBeliActionPerformed(evt);
             }
         });
 
@@ -391,82 +393,79 @@ public class FrmReturPenjualan extends javax.swing.JFrame {
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(20, 20, 20)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel5)
-                    .addComponent(cKodeBarang, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGap(51, 51, 51)
+                        .addComponent(jLabel5))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(cKodeBarang, javax.swing.GroupLayout.PREFERRED_SIZE, 173, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 46, Short.MAX_VALUE)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(mNamaBarang, javax.swing.GroupLayout.PREFERRED_SIZE, 190, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGap(51, 51, 51)
+                        .addComponent(jLabel6)))
                 .addGap(18, 18, 18)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addComponent(mHargaBarang, javax.swing.GroupLayout.PREFERRED_SIZE, 143, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(mJmlReturBeli, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addGap(31, 31, 31)
-                        .addComponent(jLabel6))
-                    .addComponent(mNamaBarang, javax.swing.GroupLayout.PREFERRED_SIZE, 204, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addComponent(mHargaBarang, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
                         .addComponent(jLabel7)
-                        .addGap(75, 75, 75)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jLabel8)
+                        .addGap(32, 32, 32)))
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGap(24, 24, 24)
-                        .addComponent(jLabel8)
-                        .addGap(77, 77, 77)
-                        .addComponent(jLabel9)
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGap(53, 53, 53)
+                        .addComponent(jLabel9))
                     .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addComponent(mJmlReturJual, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(mSubTotalBarang, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(btnTambah, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(14, 14, 14)
-                        .addComponent(btnHapus, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(35, 35, 35))))
+                        .addGap(20, 20, 20)
+                        .addComponent(mSubTotalBarang, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 37, Short.MAX_VALUE)
+                        .addComponent(btnTambah, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(18, 18, 18)
+                .addComponent(btnHapus, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(36, 36, 36))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addGap(14, 14, 14)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel7, javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                .addComponent(jLabel9)
-                                .addComponent(jLabel8)))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(mHargaBarang, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(mJmlReturJual, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(mSubTotalBarang, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                .addComponent(btnTambah)
-                                .addComponent(btnHapus))))
-                    .addGroup(jPanel2Layout.createSequentialGroup()
+                    .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(jLabel6)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(mNamaBarang, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addComponent(jLabel5)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(cKodeBarang, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(18, Short.MAX_VALUE))
+                        .addComponent(jLabel5))
+                    .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(jLabel9)
+                        .addComponent(jLabel8))
+                    .addComponent(jLabel7))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(mNamaBarang, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(mHargaBarang, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(mJmlReturBeli, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(mSubTotalBarang, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnTambah)
+                    .addComponent(btnHapus)
+                    .addComponent(cKodeBarang, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(21, Short.MAX_VALUE))
         );
 
         jPanel3.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.LOWERED, java.awt.Color.lightGray, java.awt.Color.lightGray, java.awt.Color.lightGray, java.awt.Color.lightGray));
 
-        tabelReturJual.setModel(new javax.swing.table.DefaultTableModel(
+        tabelReturBeli.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
             },
             new String [] {
-                "Kd Barang", "Nama Barang", "Harga Barang", "Jml Retuir Jual", "Sub Total Retur Jual"
+                "Kd Barang", "Nama Barang", "Harga Barang", "Jml Retuir Beli", "Sub Total Retur Jual"
             }
         ));
-        jScrollPane1.setViewportView(tabelReturJual);
+        jScrollPane1.setViewportView(tabelReturBeli);
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
@@ -568,19 +567,15 @@ public class FrmReturPenjualan extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(btnKeluar)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                .addComponent(jLabel10)
-                                .addGap(58, 58, 58))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel11)
-                                    .addComponent(jLabel12))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jLabel12)
+                            .addComponent(jLabel11, javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel10, javax.swing.GroupLayout.Alignment.LEADING))
+                        .addGap(53, 53, 53)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                            .addComponent(mTotal, javax.swing.GroupLayout.DEFAULT_SIZE, 188, Short.MAX_VALUE)
                             .addComponent(mBayar)
-                            .addComponent(mKembali)
-                            .addComponent(mTotal, javax.swing.GroupLayout.PREFERRED_SIZE, 174, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(mKembali))
                         .addGap(19, 19, 19)))
                 .addContainerGap())
         );
@@ -589,11 +584,11 @@ public class FrmReturPenjualan extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, 233, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(26, 26, 26)
+                .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnSimpan)
                     .addComponent(btnBatal)
@@ -609,19 +604,19 @@ public class FrmReturPenjualan extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel12)
                     .addComponent(mKembali, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(17, Short.MAX_VALUE))
+                .addContainerGap(30, Short.MAX_VALUE))
         );
 
         pack();
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void mKodeReturJualActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mKodeReturJualActionPerformed
+    private void mKodeReturBeliActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mKodeReturBeliActionPerformed
         // TODO add your handling code here:
-        if (mKodeReturJual.getText().isEmpty()){
-            JOptionPane.showMessageDialog(null, "Kode Retur Penjualan masih kosong...", "Kesalahan",JOptionPane.ERROR_MESSAGE); mKodeReturJual.requestFocus();
+        if (mKodeReturBeli.getText().isEmpty()){
+            JOptionPane.showMessageDialog(null, "Kode Retur Pembelian masih kosong...", "Kesalahan",JOptionPane.ERROR_MESSAGE); mKodeReturBeli.requestFocus();
         } else {
-            String sql_select = "select * from returpenjualan where kodereturpenjualan='"+mKodeReturJual.getText()+"'";
+            String sql_select = "select * from returpembelian where kodereturpembelian='"+mKodeReturBeli.getText()+"'";
             try {
                 statement = k.con.createStatement();
                 resultSet = statement.executeQuery(sql_select);
@@ -631,66 +626,64 @@ public class FrmReturPenjualan extends javax.swing.JFrame {
                 }
                 if (baris==0){
                     setEdit(false, true, true, false, false, false, false, false, false, false, false, false);
-                    sTglReturJual.requestFocus();
+                    sTglReturBeli.requestFocus();
                 } else {
-                    JOptionPane.showMessageDialog(null, "Kode Retur Penjualan sudah ada...",
+                    JOptionPane.showMessageDialog(null, "Kode Retur Pembelian sudah ada...",
                         "Kesalahan",JOptionPane.ERROR_MESSAGE);
-                    mKodeReturJual.requestFocus();
+                    mKodeReturBeli.requestFocus();
                 }
             } catch (Exception e) {
                 JOptionPane.showMessageDialog(null, e.getMessage());
             }
         }
-    }//GEN-LAST:event_mKodeReturJualActionPerformed
+    }//GEN-LAST:event_mKodeReturBeliActionPerformed
 
-    private void mNamaKonsumenActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mNamaKonsumenActionPerformed
+    private void mNamaSupplierActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mNamaSupplierActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_mNamaKonsumenActionPerformed
+    }//GEN-LAST:event_mNamaSupplierActionPerformed
 
-    private void cKodePenjualanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cKodePenjualanActionPerformed
+    private void cKodePembeliaanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cKodePembeliaanActionPerformed
         // TODO add your handling code here:
-     
-        if (cKodePenjualan.getSelectedItem()=="-- Pilih --"){
-            mNamaKonsumen.setText(null);
-            cKodePenjualan.setSelectedIndex(0);
+        if (cKodePembeliaan.getSelectedItem()=="-- Pilih --"){
+            mNamaSupplier.setText(null);
+            cKodePembeliaan.setSelectedIndex(0);
             cKodeBarang.setEnabled(false);
-            cKodePenjualan.requestFocus();
+            cKodePembeliaan.requestFocus();
         } else {
-            String sql_select = "SELECT penjualan.*,konsumen.namakonsumen FROM penjualan JOIN konsumen ON penjualan.kodekonsumen=konsumen.kodekonsumen  where penjualan.kodepenjualan='"+cKodePenjualan.getSelectedItem()+"'";
+            String sql_select = "SELECT pembelian.*,supplier.namasupplier FROM pembelian JOIN supplier ON pembelian.kodesupplier=supplier.kodesupplier where pembelian.kodepembelian='"+cKodePembeliaan.getSelectedItem()+"'";
             try {
                 statement = k.con.createStatement();
                 resultSet = statement.executeQuery(sql_select);
                 resultSet.beforeFirst();
                 while(resultSet.next()){
-                    mNamaKonsumen.setText(resultSet.getString(4));
-                    mKodeKonsumen.setText(resultSet.getString(2));
-
+                    mNamaSupplier.setText(resultSet.getString(4));
                 }
                 cKodeBarang.setEnabled(true);
+                btnHapus.setEnabled(true);
             } catch (Exception e) {
                 JOptionPane.showMessageDialog(null, e.getMessage());
             }
         }
-    }//GEN-LAST:event_cKodePenjualanActionPerformed
+    }//GEN-LAST:event_cKodePembeliaanActionPerformed
 
     private void cKodeBarangActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cKodeBarangActionPerformed
         // TODO add your handling code here:
         if (cKodeBarang.getSelectedItem()=="-- Pilih --"){
             mNamaBarang.setText(null);
             mHargaBarang.setText(null);
-            mJmlReturJual.setText(null);
+            mJmlReturBeli.setText(null);
             mSubTotalBarang.setText(null);
-            mJmlReturJual.setEnabled(false);
+            mJmlReturBeli.setEnabled(false);
         } else {
             String sql_select = "select * from barang where kodebarang='"+cKodeBarang.getSelectedItem()+"'";
             try {
                 statement = k.con.createStatement();
                 resultSet = statement.executeQuery(sql_select);
                 resultSet.beforeFirst();
-                while(resultSet.next()){ mNamaBarang.setText(resultSet.getString(2)); mHargaBarang.setText(resultSet.getString(4));
+                while(resultSet.next()){ mNamaBarang.setText(resultSet.getString(2)); mHargaBarang.setText(resultSet.getString(3));
                 }
-                mJmlReturJual.setEnabled(true);
-                mJmlReturJual.requestFocus();
+                mJmlReturBeli.setEnabled(true);
+                mJmlReturBeli.requestFocus();
             } catch (Exception e) {
                 JOptionPane.showMessageDialog(null, e.getMessage());
             }
@@ -705,15 +698,15 @@ public class FrmReturPenjualan extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_mHargaBarangActionPerformed
 
-    private void mJmlReturJualActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mJmlReturJualActionPerformed
+    private void mJmlReturBeliActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mJmlReturBeliActionPerformed
         // TODO add your handling code here:
         int harga = Integer.parseInt(mHargaBarang.getText());
-        int jml = Integer.parseInt(mJmlReturJual.getText());
+        int jml = Integer.parseInt(mJmlReturBeli.getText());
         int sub = harga * jml;
         mSubTotalBarang.setText(String.valueOf(sub));
         btnTambah.setEnabled(true);
         btnTambah.requestFocus();
-    }//GEN-LAST:event_mJmlReturJualActionPerformed
+    }//GEN-LAST:event_mJmlReturBeliActionPerformed
 
     private void mSubTotalBarangActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mSubTotalBarangActionPerformed
         // TODO add your handling code here:
@@ -721,29 +714,27 @@ public class FrmReturPenjualan extends javax.swing.JFrame {
 
     private void btnTambahActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTambahActionPerformed
         // TODO add your handling code here:
-        DefaultTableModel modelBarang = (DefaultTableModel)tabelReturJual.getModel();
+        DefaultTableModel modelBarang = (DefaultTableModel)tabelReturBeli.getModel();
         String[]data = new String[5];
         data[0] = cKodeBarang.getSelectedItem().toString();
         data[1] = mNamaBarang.getText();
         data[2] = mHargaBarang.getText();
-        data[3] = mJmlReturJual.getText();
+        data[3] = mJmlReturBeli.getText();
         data[4] = mSubTotalBarang.getText(); modelBarang.addRow(data);
         cKodeBarang.setSelectedIndex(0);
         mNamaBarang.setText(null);
         mHargaBarang.setText(null);
-        mJmlReturJual.setEnabled(false);
-        mJmlReturJual.setText(null);
+        mJmlReturBeli.setText(null);
         mSubTotalBarang.setText(null); jmlTotal();
         mBayar.setEnabled(true);
-        btnHapus.setEnabled(true);
         btnTambah.setEnabled(false);
     }//GEN-LAST:event_btnTambahActionPerformed
 
     private void btnHapusActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnHapusActionPerformed
         // TODO add your handling code here:
         try {
-            DefaultTableModel tableModel = (DefaultTableModel)tabelReturJual.getModel();
-            int x = tabelReturJual.getSelectedRow();
+            DefaultTableModel tableModel = (DefaultTableModel)tabelReturBeli.getModel();
+            int x = tabelReturBeli.getSelectedRow();
             tableModel.removeRow(x);
             jmlTotal();
         } catch (ArrayIndexOutOfBoundsException e) {
@@ -755,22 +746,18 @@ public class FrmReturPenjualan extends javax.swing.JFrame {
     private void btnSimpanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSimpanActionPerformed
         // TODO add your handling code here:
         format_tanggal();
-        String sql_insert  = "insert into returpenjualan values ('"+mKodeReturJual.getText()+"','"+
-        cKodePenjualan.getSelectedItem()+"','"+tanggal+"')";
+        String sql_insert  = "insert into returpembelian values ('"+mKodeReturBeli.getText()+"','"+
+        cKodePembeliaan.getSelectedItem()+"','"+tanggal+"')";
         try {
             statement.executeUpdate(sql_insert);
-            DefaultTableModel modelBarang = (DefaultTableModel)tabelReturJual.getModel();
+            DefaultTableModel modelBarang = (DefaultTableModel)tabelReturBeli.getModel();
             int brs = modelBarang.getRowCount();
-            btnHapus.setEnabled(false);
-            cKodeBarang.setEnabled(false);
-            cKodeBarang.setSelectedIndex(0);
-            mKodeKonsumen.setText(null);
-            mJmlReturJual.requestFocus(false);
-            
             for(int i=0;i<brs;i++)
             {
-                String xkd=(String)tabelReturJual.getValueAt(i,0);
-                int xhrg = Integer.parseInt(tabelReturJual.getValueAt(i,2).toString()); int xjml = Integer.parseInt(tabelReturJual.getValueAt(i,3).toString()); String zsql="insert into dreturpenjualan values('"+mKodeReturJual.getText()+
+                String xkd=(String)tabelReturBeli.getValueAt(i,0);
+                //int xhrg=(Integer)tabelBarang.getValueAt(i,2);
+                // int xjml=(Integer)tabelBarang.getValueAt(i,3);
+                int xhrg = Integer.parseInt(tabelReturBeli.getValueAt(i,2).toString()); int xjml = Integer.parseInt(tabelReturBeli.getValueAt(i,3).toString()); String zsql="insert into dreturpembelian values('"+mKodeReturBeli.getText()+
                 "','"+xkd+"',"+xhrg+","+xjml+")";
                 statement.executeUpdate(zsql);
             }
@@ -794,14 +781,14 @@ public class FrmReturPenjualan extends javax.swing.JFrame {
 
     private void btnKeluarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnKeluarActionPerformed
         // TODO add your handling code here:
-        this.dispose();
+        System.exit(0);
     }//GEN-LAST:event_btnKeluarActionPerformed
 
     private void btnBaruActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBaruActionPerformed
         // TODO add your handling code here:
         setTombol(false, false, true, false, false, false);
         setEdit(true, false, false, false, false, false, false, false, false, false, false, false);
-        mKodeReturJual.requestFocus();
+        mKodeReturBeli.requestFocus();
     }//GEN-LAST:event_btnBaruActionPerformed
 
     private void mTotalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mTotalActionPerformed
@@ -821,9 +808,9 @@ public class FrmReturPenjualan extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_mKembaliActionPerformed
 
-    private void mKodeKonsumenActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mKodeKonsumenActionPerformed
+    private void mKodeSupplier1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mKodeSupplier1ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_mKodeKonsumenActionPerformed
+    }//GEN-LAST:event_mKodeSupplier1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -842,13 +829,13 @@ public class FrmReturPenjualan extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(FrmReturPenjualan.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(FrmReturPembeliaan.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(FrmReturPenjualan.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(FrmReturPembeliaan.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(FrmReturPenjualan.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(FrmReturPembeliaan.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(FrmReturPenjualan.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(FrmReturPembeliaan.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
         //</editor-fold>
@@ -856,7 +843,7 @@ public class FrmReturPenjualan extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new FrmReturPenjualan().setVisible(true);
+                new FrmReturPembeliaan().setVisible(true);
             }
         });
     }
@@ -869,7 +856,7 @@ public class FrmReturPenjualan extends javax.swing.JFrame {
     private javax.swing.JButton btnSimpan;
     private javax.swing.JButton btnTambah;
     private javax.swing.JComboBox<String> cKodeBarang;
-    private javax.swing.JComboBox<String> cKodePenjualan;
+    private javax.swing.JComboBox<String> cKodePembeliaan;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -889,15 +876,15 @@ public class FrmReturPenjualan extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTextField mBayar;
     private javax.swing.JTextField mHargaBarang;
-    private javax.swing.JTextField mJmlReturJual;
+    private javax.swing.JTextField mJmlReturBeli;
     private javax.swing.JTextField mKembali;
-    private javax.swing.JTextField mKodeKonsumen;
-    private javax.swing.JTextField mKodeReturJual;
+    private javax.swing.JTextField mKodeReturBeli;
+    private javax.swing.JTextField mKodeSupplier1;
     private javax.swing.JTextField mNamaBarang;
-    private javax.swing.JTextField mNamaKonsumen;
+    private javax.swing.JTextField mNamaSupplier;
     private javax.swing.JTextField mSubTotalBarang;
     private javax.swing.JTextField mTotal;
-    private javax.swing.JSpinner sTglReturJual;
-    private javax.swing.JTable tabelReturJual;
+    private javax.swing.JSpinner sTglReturBeli;
+    private javax.swing.JTable tabelReturBeli;
     // End of variables declaration//GEN-END:variables
 }

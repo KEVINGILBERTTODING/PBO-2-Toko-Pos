@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 26, 2022 at 06:17 AM
+-- Generation Time: Jun 18, 2022 at 09:57 AM
 -- Server version: 10.4.22-MariaDB
 -- PHP Version: 8.0.13
 
@@ -127,6 +127,13 @@ CREATE TABLE `dreturpembelian` (
   `JmlReturBeliBarang` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- Dumping data for table `dreturpembelian`
+--
+
+INSERT INTO `dreturpembelian` (`KodeReturpembelian`, `KodeBarang`, `HargaBeliBarang`, `JmlReturBeliBarang`) VALUES
+('BL001', 'B002', 200000, 2);
+
 -- --------------------------------------------------------
 
 --
@@ -146,7 +153,15 @@ CREATE TABLE `dreturpenjualan` (
 
 INSERT INTO `dreturpenjualan` (`KodeReturPenjualan`, `KodeBarang`, `HargaJualBarang`, `JmlReturJualBarang`) VALUES
 ('r001', 'B001', 7000, 1),
-('R002', 'B002', 220000, 2);
+('R002', 'B002', 220000, 2),
+('R003', 'B004', 2400000, 1),
+('R004', 'B005', 800000, 1),
+('R004', 'B002', 220000, 12),
+('R005', 'B012', 2000000, 1),
+('R006', 'B002', 220000, 2),
+('R007', 'B001', 7000, 2),
+('R008', 'B001', 7000, 1),
+('rrwwrw', 'B001', 7000, 2);
 
 -- --------------------------------------------------------
 
@@ -234,6 +249,13 @@ CREATE TABLE `returpembelian` (
   `TglReturPembelian` date DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- Dumping data for table `returpembelian`
+--
+
+INSERT INTO `returpembelian` (`KodeReturPembelian`, `KodePembelian`, `TglReturPembelian`) VALUES
+('BL001', 'KP003', '2022-05-26');
+
 -- --------------------------------------------------------
 
 --
@@ -253,7 +275,14 @@ CREATE TABLE `returpenjualan` (
 INSERT INTO `returpenjualan` (`KodeReturPenjualan`, `KodePenjualan`, `TglReturPenjualan`) VALUES
 ('qwqwq', '121212', '2022-05-25'),
 ('r001', '121212', '2022-05-25'),
-('R002', '121212', '2022-05-25');
+('R002', '121212', '2022-05-25'),
+('R003', 'P005', '2022-05-26'),
+('R004', 'K001', '2022-05-26'),
+('R005', '121212', '2022-05-26'),
+('R006', 'K001', '2022-05-26'),
+('R007', 'K001', '2022-05-26'),
+('R008', 'P003', '2022-05-26'),
+('rrwwrw', 'K001', '2022-05-26');
 
 -- --------------------------------------------------------
 
