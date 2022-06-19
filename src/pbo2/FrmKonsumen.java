@@ -427,7 +427,7 @@ JOptionPane.showMessageDialog(null, e.getMessage());
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addGap(25, 25, 25)
                 .addComponent(BtnTambah)
-                .addGap(112, 112, 112)
+                .addGap(18, 18, 18)
                 .addComponent(BtnKoreksi)
                 .addGap(18, 18, 18)
                 .addComponent(BtnHapus)

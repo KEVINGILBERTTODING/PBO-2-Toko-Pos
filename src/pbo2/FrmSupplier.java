@@ -41,7 +41,7 @@ int pil;
     
     private void tampilIcon(){
         BtnTambah.setIcon(new
-        ImageIcon("./gambar/add.png"));
+        ImageIcon("./gambar/Add_16x16.png"));
         BtnKoreksi.setIcon(new
         ImageIcon("./gambar/edit.png"));
         BtnHapus.setIcon(new

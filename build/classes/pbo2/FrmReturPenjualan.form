@@ -350,13 +350,15 @@
                               </Group>
                           </Group>
                           <EmptySpace max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="mHargaBarang" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="mJmlReturJual" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="mSubTotalBarang" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Group type="103" alignment="3" groupAlignment="3" attributes="0">
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Group type="103" alignment="0" groupAlignment="3" attributes="0">
                                   <Component id="btnTambah" alignment="3" min="-2" max="-2" attributes="0"/>
                                   <Component id="btnHapus" alignment="3" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <Group type="103" groupAlignment="3" attributes="0">
+                                  <Component id="mHargaBarang" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="mJmlReturJual" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="mSubTotalBarang" alignment="3" min="-2" max="-2" attributes="0"/>
                               </Group>
                           </Group>
                       </Group>
