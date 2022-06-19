@@ -9,6 +9,7 @@ import java.util.HashMap;
 import java.util.Map;
 import javax.swing.JFrame;
 import javax.swing.ImageIcon;
+import javax.swing.JMenuBar;
 import net.sf.jasperreports.engine.JasperFillManager;
 import net.sf.jasperreports.engine.JasperPrint;
 import net.sf.jasperreports.view.JasperViewer;
@@ -34,8 +35,6 @@ public class FrmMenuUtama extends javax.swing.JFrame {
         
          
     }
-    
-     
    
 
     
@@ -95,6 +94,8 @@ public class FrmMenuUtama extends javax.swing.JFrame {
         ImageIcon("./gambar/LapReturPembelian_16x16.png")); 
  }
     
+    
+    
    
 
     /**
@@ -107,7 +108,7 @@ public class FrmMenuUtama extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
-        jMenuBar1 = new javax.swing.JMenuBar();
+        menuUtama = new javax.swing.JMenuBar();
         mnuFile = new javax.swing.JMenu();
         mnuKeluar = new javax.swing.JMenuItem();
         mnuMaster = new javax.swing.JMenu();
@@ -137,18 +138,21 @@ public class FrmMenuUtama extends javax.swing.JFrame {
             }
         });
 
-        jPanel1.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        jPanel1.setBackground(new java.awt.Color(28, 28, 30));
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 826, Short.MAX_VALUE)
+            .addGap(0, 830, Short.MAX_VALUE)
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 542, Short.MAX_VALUE)
+            .addGap(0, 419, Short.MAX_VALUE)
         );
+
+        menuUtama.setBackground(new java.awt.Color(51, 51, 51));
+        menuUtama.setForeground(new java.awt.Color(51, 51, 51));
 
         mnuFile.setText("File");
         mnuFile.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -165,7 +169,7 @@ public class FrmMenuUtama extends javax.swing.JFrame {
         });
         mnuFile.add(mnuKeluar);
 
-        jMenuBar1.add(mnuFile);
+        menuUtama.add(mnuFile);
 
         mnuMaster.setText("Master");
         mnuMaster.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -200,7 +204,7 @@ public class FrmMenuUtama extends javax.swing.JFrame {
         });
         mnuMaster.add(mnuBarang);
 
-        jMenuBar1.add(mnuMaster);
+        menuUtama.add(mnuMaster);
 
         mnuTransaksi.setText("Transaksi");
         mnuTransaksi.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -244,7 +248,7 @@ public class FrmMenuUtama extends javax.swing.JFrame {
         });
         mnuTransaksi.add(mnuReturPembelian);
 
-        jMenuBar1.add(mnuTransaksi);
+        menuUtama.add(mnuTransaksi);
 
         mnuLaporan.setText("Laporan");
         mnuLaporan.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -290,16 +294,16 @@ public class FrmMenuUtama extends javax.swing.JFrame {
         mnuLapReturPembelian.setText("Retur Pembelian");
         mnuLaporan.add(mnuLapReturPembelian);
 
-        jMenuBar1.add(mnuLaporan);
+        menuUtama.add(mnuLaporan);
 
         mnuAbout.setText("About");
         mnuAbout.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         mnuAbout.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         mnuAbout.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
         mnuAbout.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
-        jMenuBar1.add(mnuAbout);
+        menuUtama.add(mnuAbout);
 
-        setJMenuBar(jMenuBar1);
+        setJMenuBar(menuUtama);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -309,9 +313,7 @@ public class FrmMenuUtama extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pack();
@@ -334,6 +336,13 @@ public class FrmMenuUtama extends javax.swing.JFrame {
 
     private void mnuLapBarangActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mnuLapBarangActionPerformed
         // TODO add your handling code here:
+          String filename = "src/pbo2/LapBarang.jasper";
+        Map param = new HashMap();
+        try {
+        JasperPrint cetak = JasperFillManager.fillReport(filename, param, k.con);
+        JasperViewer.viewReport(cetak, false);
+        } catch (Exception e){
+        }
     }//GEN-LAST:event_mnuLapBarangActionPerformed
 
     private void mnuKonsumenActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mnuKonsumenActionPerformed
@@ -404,6 +413,7 @@ public class FrmMenuUtama extends javax.swing.JFrame {
             java.util.logging.Logger.getLogger(FrmMenuUtama.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
+        
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
@@ -412,13 +422,14 @@ public class FrmMenuUtama extends javax.swing.JFrame {
                 FrmMenuUtama maks = new FrmMenuUtama();
                 maks.setExtendedState(JFrame.MAXIMIZED_BOTH); 
                 maks.setVisible(true);
+                
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JMenuBar menuUtama;
     private javax.swing.JMenu mnuAbout;
     private javax.swing.JMenuItem mnuBarang;
     private javax.swing.JMenu mnuFile;
