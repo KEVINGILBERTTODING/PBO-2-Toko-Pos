@@ -245,7 +245,7 @@ public class FrmReturPembeliaan extends javax.swing.JFrame {
         jLabel2.setForeground(new java.awt.Color(204, 204, 204));
         jLabel2.setText("Tanggal Retur Beli");
 
-        mKodeReturBeli.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
+        mKodeReturBeli.setFont(new java.awt.Font("Verdana", 1, 12)); // NOI18N
         mKodeReturBeli.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(102, 102, 255), 3));
         mKodeReturBeli.setEnabled(false);
         mKodeReturBeli.addActionListener(new java.awt.event.ActionListener() {
@@ -254,6 +254,7 @@ public class FrmReturPembeliaan extends javax.swing.JFrame {
             }
         });
 
+        sTglReturBeli.setFont(new java.awt.Font("Verdana", 1, 12)); // NOI18N
         sTglReturBeli.setModel(new javax.swing.SpinnerDateModel(new java.util.Date(1620274020000L), null, null, java.util.Calendar.DAY_OF_WEEK_IN_MONTH));
         sTglReturBeli.setEditor(new javax.swing.JSpinner.DateEditor(sTglReturBeli, "dd-MMMM-yyyy"));
         sTglReturBeli.setEnabled(false);
@@ -266,7 +267,7 @@ public class FrmReturPembeliaan extends javax.swing.JFrame {
         jLabel4.setForeground(new java.awt.Color(204, 204, 204));
         jLabel4.setText("Nama Supplier");
 
-        mNamaSupplier.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
+        mNamaSupplier.setFont(new java.awt.Font("Verdana", 1, 12)); // NOI18N
         mNamaSupplier.setEnabled(false);
         mNamaSupplier.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -274,7 +275,7 @@ public class FrmReturPembeliaan extends javax.swing.JFrame {
             }
         });
 
-        cKodePembeliaan.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
+        cKodePembeliaan.setFont(new java.awt.Font("Verdana", 1, 12)); // NOI18N
         cKodePembeliaan.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "--Pilih--", " " }));
         cKodePembeliaan.setEnabled(false);
         cKodePembeliaan.addActionListener(new java.awt.event.ActionListener() {
@@ -287,7 +288,7 @@ public class FrmReturPembeliaan extends javax.swing.JFrame {
         jLabel13.setForeground(new java.awt.Color(204, 204, 204));
         jLabel13.setText("Kode Supplier");
 
-        mKodeSupplier.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
+        mKodeSupplier.setFont(new java.awt.Font("Verdana", 1, 12)); // NOI18N
         mKodeSupplier.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(242, 72, 34), 3));
         mKodeSupplier.setCaretColor(new java.awt.Color(255, 55, 95));
         mKodeSupplier.setEnabled(false);
@@ -303,7 +304,7 @@ public class FrmReturPembeliaan extends javax.swing.JFrame {
         jLabel5.setForeground(new java.awt.Color(204, 204, 204));
         jLabel5.setText("Kode Barang");
 
-        cKodeBarang.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
+        cKodeBarang.setFont(new java.awt.Font("Verdana", 1, 12)); // NOI18N
         cKodeBarang.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "--Pilih--", " " }));
         cKodeBarang.setEnabled(false);
         cKodeBarang.addActionListener(new java.awt.event.ActionListener() {
@@ -316,7 +317,7 @@ public class FrmReturPembeliaan extends javax.swing.JFrame {
         jLabel6.setForeground(new java.awt.Color(204, 204, 204));
         jLabel6.setText("Nama Barang");
 
-        mNamaBarang.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
+        mNamaBarang.setFont(new java.awt.Font("Verdana", 1, 12)); // NOI18N
         mNamaBarang.setEnabled(false);
         mNamaBarang.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -328,7 +329,7 @@ public class FrmReturPembeliaan extends javax.swing.JFrame {
         jLabel7.setForeground(new java.awt.Color(204, 204, 204));
         jLabel7.setText("Harga Barang");
 
-        mHargaBarang.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
+        mHargaBarang.setFont(new java.awt.Font("Verdana", 1, 12)); // NOI18N
         mHargaBarang.setEnabled(false);
         mHargaBarang.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -340,7 +341,7 @@ public class FrmReturPembeliaan extends javax.swing.JFrame {
         jLabel8.setForeground(new java.awt.Color(204, 204, 204));
         jLabel8.setText("Qty");
 
-        mJmlReturBeli.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
+        mJmlReturBeli.setFont(new java.awt.Font("Verdana", 1, 12)); // NOI18N
         mJmlReturBeli.setEnabled(false);
         mJmlReturBeli.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -348,7 +349,7 @@ public class FrmReturPembeliaan extends javax.swing.JFrame {
             }
         });
 
-        mSubTotalBarang.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
+        mSubTotalBarang.setFont(new java.awt.Font("Verdana", 1, 12)); // NOI18N
         mSubTotalBarang.setEnabled(false);
         mSubTotalBarang.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -418,6 +419,7 @@ public class FrmReturPembeliaan extends javax.swing.JFrame {
         jLabel12.setForeground(new java.awt.Color(51, 153, 0));
         jLabel12.setText("Kembali");
 
+        mKembali.setFont(new java.awt.Font("Verdana", 1, 12)); // NOI18N
         mKembali.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(204, 204, 204), 3));
         mKembali.setEnabled(false);
         mKembali.addActionListener(new java.awt.event.ActionListener() {
@@ -426,6 +428,7 @@ public class FrmReturPembeliaan extends javax.swing.JFrame {
             }
         });
 
+        mBayar.setFont(new java.awt.Font("Verdana", 1, 12)); // NOI18N
         mBayar.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(204, 204, 204), 3));
         mBayar.setEnabled(false);
         mBayar.addActionListener(new java.awt.event.ActionListener() {
@@ -434,6 +437,7 @@ public class FrmReturPembeliaan extends javax.swing.JFrame {
             }
         });
 
+        mTotal.setFont(new java.awt.Font("Verdana", 1, 12)); // NOI18N
         mTotal.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(204, 204, 204), 3));
         mTotal.setEnabled(false);
         mTotal.addActionListener(new java.awt.event.ActionListener() {
