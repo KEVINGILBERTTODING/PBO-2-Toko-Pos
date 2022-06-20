@@ -404,7 +404,7 @@ public class FrmReturPembeliaan extends javax.swing.JFrame {
             .addGap(0, 22, Short.MAX_VALUE)
         );
 
-        jPanel2.setBackground(new java.awt.Color(44, 44, 46));
+        jPanel2.setBackground(new java.awt.Color(28, 28, 30));
 
         jLabel10.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
         jLabel10.setForeground(new java.awt.Color(102, 153, 255));
@@ -867,6 +867,7 @@ public class FrmReturPembeliaan extends javax.swing.JFrame {
         // Simpan ke detail penjualan
         setTombol(true, false, false, true, false, false);
         setEdit(false, false, false, false, false, false, false, false, false, false, false, false);
+        mKodeSupplier.setText("");
         bersihTabel();
         bersih();
     }//GEN-LAST:event_btnSimpanActionPerformed

@@ -321,6 +321,7 @@ public class FrmMenuUtama extends javax.swing.JFrame {
 
     private void mnuReturPembelianActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mnuReturPembelianActionPerformed
         // TODO add your handling code here:
+         new FrmReturPembeliaan().setVisible(true);
     }//GEN-LAST:event_mnuReturPembelianActionPerformed
 
     private void mnuLapKonsumenActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mnuLapKonsumenActionPerformed
