@@ -337,7 +337,7 @@ public class FrmMenuUtama extends javax.swing.JFrame {
 
     private void mnuLapBarangActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mnuLapBarangActionPerformed
         // TODO add your handling code here:
-          String filename = "src/pbo2/LapBarang.jasper";
+          String filename = "src/pbo2/LaporanBarang.jasper";
         Map param = new HashMap();
         try {
         JasperPrint cetak = JasperFillManager.fillReport(filename, param, k.con);
