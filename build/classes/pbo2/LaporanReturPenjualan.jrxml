@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" language="groovy" pageWidth="842" pageHeight="595" orientation="Landscape" columnWidth="802" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="78c4fdc9-e497-4994-ab8b-ae8a87429855">
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" language="groovy" pageWidth="842" pageHeight="595" orientation="Landscape" columnWidth="802" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="78fe66e2-f256-4224-ae5e-4356fee933da">
 	<style name="Title" forecolor="#FFFFFF" fontName="Times New Roman" fontSize="50" isBold="false" pdfFontName="Times-Bold"/>
 	<style name="SubTitle" forecolor="#CCCCCC" fontName="Times New Roman" fontSize="18" isBold="false" pdfFontName="Times-Roman"/>
 	<style name="Column header" forecolor="#666666" fontName="Times New Roman" fontSize="14" isBold="true" pdfFontName="Times-Roman"/>
@@ -12,28 +12,28 @@
 	</style>
 	<queryString language="SQL">
 		<![CDATA[SELECT
-     penjualan.`Kodepenjualan` AS 'Kode Penjualan',
-     penjualan.`KodeKonsumen` AS 'Kode Konsumen',
-     penjualan.`TglPenjualan` AS 'Tanggal Penjualan'
+     returpenjualan.`KodeReturPenjualan` AS 'Kode Retur Penjualan',
+     returpenjualan.`KodePenjualan` AS 'Kode Penjualan',
+     returpenjualan.`TglReturPenjualan` AS 'Tanggal Retur Penjualan'
 FROM
-     `penjualan` penjualan]]>
+     `returpenjualan` returpenjualan]]>
 	</queryString>
+	<field name="Kode Retur Penjualan" class="java.lang.String"/>
 	<field name="Kode Penjualan" class="java.lang.String"/>
-	<field name="Kode Konsumen" class="java.lang.String"/>
-	<field name="Tanggal Penjualan" class="java.sql.Date"/>
+	<field name="Tanggal Retur Penjualan" class="java.sql.Date"/>
 	<background>
 		<band splitType="Stretch"/>
 	</background>
 	<title>
 		<band height="102" splitType="Stretch">
 			<image>
-				<reportElement x="725" y="0" width="77" height="102" uuid="38e6c58f-f2cf-4644-b321-05044ea588b5"/>
+				<reportElement x="725" y="0" width="77" height="102" uuid="e6b878bd-125a-4c89-9524-adef60c4753e"/>
 				<imageExpression><![CDATA["mainicon.png"]]></imageExpression>
 			</image>
 			<frame>
-				<reportElement mode="Opaque" x="0" y="0" width="721" height="66" backcolor="#000000" uuid="927fdaf9-cf0a-41fc-b30f-0dbe8efb192a"/>
+				<reportElement mode="Opaque" x="0" y="0" width="721" height="66" backcolor="#000000" uuid="c543b73e-1bbe-479c-8d59-e29dfbf3e39d"/>
 				<staticText>
-					<reportElement style="Title" x="0" y="0" width="453" height="66" uuid="93f1f794-e47e-456e-a2fc-69d12bfec826"/>
+					<reportElement style="Title" x="0" y="0" width="454" height="66" uuid="ce40c31b-4a9c-486d-8012-6163458b3ecd"/>
 					<box topPadding="4" leftPadding="4" bottomPadding="4" rightPadding="4"/>
 					<textElement verticalAlignment="Bottom">
 						<font isBold="false"/>
@@ -41,17 +41,17 @@ FROM
 					<text><![CDATA[ADELAIDE STORE]]></text>
 				</staticText>
 				<staticText>
-					<reportElement style="SubTitle" x="370" y="37" width="316" height="29" uuid="59b3af48-5832-4a63-a9c0-5ee0eaa67486"/>
+					<reportElement style="SubTitle" x="370" y="37" width="316" height="29" uuid="b1169493-8852-412b-8605-7f0058d10860"/>
 					<textElement textAlignment="Right">
 						<font size="22" isBold="false"/>
 					</textElement>
-					<text><![CDATA[Laporan Penjualan]]></text>
+					<text><![CDATA[Laporan Retur Penjualan]]></text>
 				</staticText>
 			</frame>
 			<frame>
-				<reportElement mode="Opaque" x="0" y="70" width="721" height="32" forecolor="#000000" backcolor="#CC0000" uuid="b3a0c7d1-29ba-4b3f-9bc0-182cc7aefb1c"/>
+				<reportElement mode="Opaque" x="0" y="70" width="721" height="32" forecolor="#000000" backcolor="#CC0000" uuid="aeed397f-2534-49e1-83e3-5c3bff6f256e"/>
 				<textField pattern="EEEEE dd MMMMM yyyy">
-					<reportElement x="553" y="12" width="144" height="20" forecolor="#FFFFFF" uuid="03f5a2c6-3fda-4ed5-a6ef-2298dc683828"/>
+					<reportElement x="553" y="12" width="144" height="20" forecolor="#FFFFFF" uuid="a097cfd5-7c64-47b6-ba41-a0ded1ea2de7"/>
 					<textElement textAlignment="Right">
 						<font size="12"/>
 					</textElement>
@@ -66,52 +66,52 @@ FROM
 	<columnHeader>
 		<band height="18" splitType="Stretch">
 			<staticText>
-				<reportElement style="Column header" x="0" y="0" width="265" height="18" forecolor="#000000" uuid="c5d1297d-ab74-49ea-b360-b152ade8f9b3"/>
+				<reportElement style="Column header" x="0" y="0" width="265" height="18" forecolor="#000000" uuid="b4d0bef3-3ac2-4b77-b40b-9496f4ae51cb"/>
+				<textElement>
+					<font isBold="false"/>
+				</textElement>
+				<text><![CDATA[Kode Retur Penjualan]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="265" y="0" width="265" height="18" forecolor="#000000" uuid="a676295d-1c3b-40ed-a428-53f8f9be813b"/>
 				<textElement>
 					<font isBold="false"/>
 				</textElement>
 				<text><![CDATA[Kode Penjualan]]></text>
 			</staticText>
 			<staticText>
-				<reportElement style="Column header" x="265" y="0" width="265" height="18" forecolor="#000000" uuid="fd5496ca-91b4-415e-a33d-afe39ac64496"/>
+				<reportElement style="Column header" x="530" y="0" width="265" height="18" forecolor="#000000" uuid="c27a8fe4-80e7-4dca-8f4a-ec1eadb90054"/>
 				<textElement>
 					<font isBold="false"/>
 				</textElement>
-				<text><![CDATA[Kode Konsumen]]></text>
-			</staticText>
-			<staticText>
-				<reportElement style="Column header" x="530" y="0" width="265" height="18" forecolor="#000000" uuid="24c9452d-ec6f-46f2-8d43-8ebf53d8bc0e"/>
-				<textElement>
-					<font isBold="false"/>
-				</textElement>
-				<text><![CDATA[Tanggal Penjualan]]></text>
+				<text><![CDATA[Tanggal Retur Penjualan]]></text>
 			</staticText>
 		</band>
 	</columnHeader>
 	<detail>
 		<band height="18" splitType="Stretch">
 			<frame>
-				<reportElement style="Row" mode="Opaque" x="0" y="0" width="797" height="18" uuid="fca5142c-cd5d-4404-b0f8-8e9c441a0108"/>
+				<reportElement style="Row" mode="Opaque" x="0" y="0" width="797" height="18" uuid="abee3447-9904-4f22-b62e-3078298e7861"/>
 				<textField isStretchWithOverflow="true">
-					<reportElement style="Detail" positionType="Float" x="0" y="0" width="265" height="18" uuid="430556af-dba4-4ab3-b04c-dc14ff581086"/>
+					<reportElement style="Detail" positionType="Float" x="0" y="0" width="265" height="18" uuid="3b499dc2-a009-451a-a721-81d6f32a2162"/>
+					<textElement>
+						<font size="14"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{Kode Retur Penjualan}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement style="Detail" positionType="Float" x="265" y="0" width="265" height="18" uuid="e556e38a-09ae-41be-9003-464f56dd8f4e"/>
 					<textElement>
 						<font size="14"/>
 					</textElement>
 					<textFieldExpression><![CDATA[$F{Kode Penjualan}]]></textFieldExpression>
 				</textField>
 				<textField isStretchWithOverflow="true">
-					<reportElement style="Detail" positionType="Float" x="265" y="0" width="265" height="18" uuid="11aec839-40cf-4b99-a075-e5e81fc23c84"/>
+					<reportElement style="Detail" positionType="Float" x="530" y="0" width="265" height="18" uuid="ed225749-35ee-4cb1-8ea0-28d7004d9b36"/>
 					<textElement>
 						<font size="14"/>
 					</textElement>
-					<textFieldExpression><![CDATA[$F{Kode Konsumen}]]></textFieldExpression>
-				</textField>
-				<textField isStretchWithOverflow="true">
-					<reportElement style="Detail" positionType="Float" x="530" y="0" width="265" height="18" uuid="8d0ff856-6874-4050-8461-02207ffb3154"/>
-					<textElement>
-						<font size="14"/>
-					</textElement>
-					<textFieldExpression><![CDATA[$F{Tanggal Penjualan}]]></textFieldExpression>
+					<textFieldExpression><![CDATA[$F{Tanggal Retur Penjualan}]]></textFieldExpression>
 				</textField>
 			</frame>
 		</band>
@@ -119,7 +119,7 @@ FROM
 	<columnFooter>
 		<band height="7" splitType="Stretch">
 			<line>
-				<reportElement positionType="FixRelativeToBottom" x="0" y="3" width="555" height="1" uuid="7efc0293-7c88-4f7e-8e59-b4b7e19133fc"/>
+				<reportElement positionType="FixRelativeToBottom" x="0" y="3" width="555" height="1" uuid="2eef51ba-61c7-42a0-afa7-c537180b7c41"/>
 				<graphicElement>
 					<pen lineWidth="0.5" lineColor="#999999"/>
 				</graphicElement>
@@ -129,23 +129,23 @@ FROM
 	<pageFooter>
 		<band height="25" splitType="Stretch">
 			<frame>
-				<reportElement mode="Opaque" x="0" y="0" width="802" height="25" forecolor="#D0B48E" backcolor="#000000" uuid="df504c72-31b2-41d0-84a7-00c09b032367"/>
+				<reportElement mode="Opaque" x="0" y="0" width="802" height="25" forecolor="#D0B48E" backcolor="#000000" uuid="5d577154-7da9-4bc7-a37f-8d3dcef5672b"/>
 				<textField evaluationTime="Report">
-					<reportElement style="Column header" x="757" y="3" width="40" height="20" forecolor="#FFFFFF" uuid="ecc059f5-7148-441d-9985-af762a4ce315"/>
+					<reportElement style="Column header" x="757" y="3" width="40" height="20" forecolor="#FFFFFF" uuid="bf705119-ca70-4c31-9385-66e917f78c34"/>
 					<textElement verticalAlignment="Middle">
 						<font size="10" isBold="false"/>
 					</textElement>
 					<textFieldExpression><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
 				</textField>
 				<textField>
-					<reportElement style="Column header" x="677" y="3" width="80" height="20" forecolor="#FFFFFF" uuid="87a0f0bd-5bcf-4185-9e94-011bc49eeeec"/>
+					<reportElement style="Column header" x="677" y="3" width="80" height="20" forecolor="#FFFFFF" uuid="2b8b3b08-b8ce-4592-92ea-4bc74d486d0a"/>
 					<textElement textAlignment="Right" verticalAlignment="Middle">
 						<font size="10" isBold="false"/>
 					</textElement>
 					<textFieldExpression><![CDATA["Page "+$V{PAGE_NUMBER}+" of"]]></textFieldExpression>
 				</textField>
 				<textField pattern="EEEEE dd MMMMM yyyy">
-					<reportElement style="Column header" x="2" y="3" width="197" height="20" forecolor="#FFFFFF" uuid="67501b27-b2fd-4efc-93a0-154a37380a5c"/>
+					<reportElement style="Column header" x="2" y="3" width="197" height="20" forecolor="#FFFFFF" uuid="012c88c5-bfa5-4df6-afce-c00c19f9f893"/>
 					<textElement verticalAlignment="Middle">
 						<font size="10" isBold="false"/>
 					</textElement>

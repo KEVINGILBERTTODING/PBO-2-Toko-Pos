@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" language="groovy" pageWidth="842" pageHeight="595" orientation="Landscape" columnWidth="802" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="3a2b5419-4f0c-4c46-aead-9d9f1da6ff88">
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" language="groovy" pageWidth="842" pageHeight="595" orientation="Landscape" columnWidth="802" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="af9c357d-457f-451c-99e4-f6218ae93b7f">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
 	<style name="Title" forecolor="#FFFFFF" fontName="Times New Roman" fontSize="50" isBold="false" pdfFontName="Times-Bold"/>
 	<style name="SubTitle" forecolor="#CCCCCC" fontName="Times New Roman" fontSize="18" isBold="false" pdfFontName="Times-Roman"/>
 	<style name="Column header" forecolor="#666666" fontName="Times New Roman" fontSize="14" isBold="true" pdfFontName="Times-Roman"/>
@@ -12,38 +15,36 @@
 	</style>
 	<queryString language="SQL">
 		<![CDATA[SELECT
-     dreturpembelian.`kodereturpembelian` AS 'Kode Retur Pembelian',
-     dreturpembelian.`kodebarang` AS 'Kode Barang',
-     dreturpembelian.`hargabelibarang` AS 'Harga Beli',
-     dreturpembelian.`jmlreturbelibarang` AS 'Jumlah Retur'
+     returpembelian.`KodeReturPembelian` AS 'Kode Retur Pembelian',
+     returpembelian.`KodePembelian` AS 'Kode Pembelian',
+     returpembelian.`TglReturPembelian` AS 'Tanggal Retur Pembelian'
 FROM
-     `dreturpembelian` dreturpembelian]]>
+     `returpembelian` returpembelian]]>
 	</queryString>
 	<field name="Kode Retur Pembelian" class="java.lang.String"/>
-	<field name="Kode Barang" class="java.lang.String"/>
-	<field name="Harga Beli" class="java.lang.Integer"/>
-	<field name="Jumlah Retur" class="java.lang.Integer"/>
+	<field name="Kode Pembelian" class="java.lang.String"/>
+	<field name="Tanggal Retur Pembelian" class="java.sql.Date"/>
 	<background>
 		<band splitType="Stretch"/>
 	</background>
 	<title>
 		<band height="102" splitType="Stretch">
 			<image>
-				<reportElement x="725" y="0" width="77" height="102" uuid="f7b88bc7-83e1-4089-8de6-01ba9481a2ca"/>
+				<reportElement x="725" y="0" width="77" height="102" uuid="8b3a8ef2-5865-4960-ba14-d9d8fb9b4364"/>
 				<imageExpression><![CDATA["mainicon.png"]]></imageExpression>
 			</image>
 			<frame>
-				<reportElement mode="Opaque" x="0" y="0" width="721" height="66" backcolor="#000000" uuid="791385a9-c1c6-4e92-b01f-3dfde82baa19"/>
+				<reportElement mode="Opaque" x="0" y="0" width="721" height="66" backcolor="#000000" uuid="8647c736-e117-437f-837f-8b55cfd854fd"/>
 				<staticText>
-					<reportElement style="Title" x="0" y="0" width="435" height="66" uuid="7989ca1b-4fc8-4db6-baec-7c0e63366a13"/>
+					<reportElement style="Title" x="0" y="0" width="456" height="66" uuid="ffe774df-eb42-4b52-80ee-61329c79a3bf"/>
 					<box topPadding="4" leftPadding="4" bottomPadding="4" rightPadding="4"/>
 					<textElement verticalAlignment="Bottom">
 						<font isBold="false"/>
 					</textElement>
-					<text><![CDATA[ADELAIDE STORE]]></text>
+					<text><![CDATA[ADELAIDE  STORE]]></text>
 				</staticText>
 				<staticText>
-					<reportElement style="SubTitle" x="370" y="37" width="316" height="29" uuid="ee46accd-4a11-4a9c-b9ce-9c55f4c6b07f"/>
+					<reportElement style="SubTitle" x="381" y="37" width="316" height="29" uuid="7b32637c-1c21-4191-882c-0cfa5e6299a1"/>
 					<textElement textAlignment="Right">
 						<font size="22" isBold="false"/>
 					</textElement>
@@ -51,9 +52,9 @@ FROM
 				</staticText>
 			</frame>
 			<frame>
-				<reportElement mode="Opaque" x="0" y="70" width="721" height="32" forecolor="#000000" backcolor="#CC0000" uuid="7316b073-3c88-459d-b8b8-cdd6ca0900d1"/>
+				<reportElement mode="Opaque" x="0" y="70" width="721" height="32" forecolor="#000000" backcolor="#CC0000" uuid="3033f4a0-93f2-44e6-946f-920ebd807e7a"/>
 				<textField pattern="EEEEE dd MMMMM yyyy">
-					<reportElement x="553" y="12" width="144" height="20" forecolor="#FFFFFF" uuid="f8a1eb73-0527-4cfc-809c-22efaee5fbe1"/>
+					<reportElement x="553" y="12" width="144" height="20" forecolor="#FFFFFF" uuid="620e7e7f-8d28-4ec7-ae1b-225fff5997c4"/>
 					<textElement textAlignment="Right">
 						<font size="12"/>
 					</textElement>
@@ -68,66 +69,52 @@ FROM
 	<columnHeader>
 		<band height="18" splitType="Stretch">
 			<staticText>
-				<reportElement style="Column header" x="0" y="0" width="199" height="18" forecolor="#000000" uuid="b70a9655-a164-4837-a385-c5af6a99c6a5"/>
+				<reportElement style="Column header" x="0" y="0" width="265" height="18" forecolor="#000000" uuid="93bb4357-8ab9-429b-ab24-b1b791fefdca"/>
 				<textElement>
 					<font isBold="false"/>
 				</textElement>
 				<text><![CDATA[Kode Retur Pembelian]]></text>
 			</staticText>
 			<staticText>
-				<reportElement style="Column header" x="199" y="0" width="199" height="18" forecolor="#000000" uuid="4fab27c3-da78-47ce-840d-0f28000e3027"/>
+				<reportElement style="Column header" x="265" y="0" width="265" height="18" forecolor="#000000" uuid="d1fe26eb-9544-4674-b559-b50dc9872a6f"/>
 				<textElement>
 					<font isBold="false"/>
 				</textElement>
-				<text><![CDATA[Kode Barang]]></text>
+				<text><![CDATA[Kode Pembelian]]></text>
 			</staticText>
 			<staticText>
-				<reportElement style="Column header" x="398" y="0" width="199" height="18" forecolor="#000000" uuid="366a5d7d-d714-4d63-b4f2-dc97daf0d1ea"/>
+				<reportElement style="Column header" x="530" y="0" width="265" height="18" forecolor="#000000" uuid="6abf68f0-bffb-410d-87fe-43c919e0f4e5"/>
 				<textElement>
 					<font isBold="false"/>
 				</textElement>
-				<text><![CDATA[Harga Beli]]></text>
-			</staticText>
-			<staticText>
-				<reportElement style="Column header" x="597" y="0" width="199" height="18" forecolor="#000000" uuid="7290d08a-5655-41ef-8719-582b876a07b6"/>
-				<textElement>
-					<font isBold="false"/>
-				</textElement>
-				<text><![CDATA[Jumlah Retur]]></text>
+				<text><![CDATA[Tanggal Retur Pembelian]]></text>
 			</staticText>
 		</band>
 	</columnHeader>
 	<detail>
 		<band height="18" splitType="Stretch">
 			<frame>
-				<reportElement style="Row" mode="Opaque" x="0" y="0" width="797" height="18" uuid="dd4ae202-0d38-43fa-8831-e4c8bfef00fe"/>
+				<reportElement style="Row" mode="Opaque" x="0" y="0" width="797" height="18" uuid="044c1df2-4093-44a5-b174-2b8d85d6d74f"/>
 				<textField isStretchWithOverflow="true">
-					<reportElement style="Detail" positionType="Float" x="0" y="0" width="199" height="18" uuid="c9ec232c-b803-43a2-8ad8-6499469fd5bc"/>
+					<reportElement style="Detail" positionType="Float" x="0" y="0" width="265" height="18" uuid="2503e46d-47ad-4132-a4a5-76cf5735c825"/>
 					<textElement>
 						<font size="14"/>
 					</textElement>
 					<textFieldExpression><![CDATA[$F{Kode Retur Pembelian}]]></textFieldExpression>
 				</textField>
 				<textField isStretchWithOverflow="true">
-					<reportElement style="Detail" positionType="Float" x="199" y="0" width="199" height="18" uuid="d145e3ad-3a7d-43f8-843f-4eaebbe21167"/>
+					<reportElement style="Detail" positionType="Float" x="265" y="0" width="265" height="18" uuid="14f7f38d-5e5d-437f-b276-e09f329c9eb9"/>
 					<textElement>
 						<font size="14"/>
 					</textElement>
-					<textFieldExpression><![CDATA[$F{Kode Barang}]]></textFieldExpression>
+					<textFieldExpression><![CDATA[$F{Kode Pembelian}]]></textFieldExpression>
 				</textField>
 				<textField isStretchWithOverflow="true">
-					<reportElement style="Detail" positionType="Float" x="398" y="0" width="199" height="18" uuid="79629a60-a590-495d-a5b1-ee9fe8f79abf"/>
+					<reportElement style="Detail" positionType="Float" x="530" y="0" width="265" height="18" uuid="6681aa1d-e5fb-4d3f-a7e4-9de8913f4106"/>
 					<textElement>
 						<font size="14"/>
 					</textElement>
-					<textFieldExpression><![CDATA[$F{Harga Beli}]]></textFieldExpression>
-				</textField>
-				<textField isStretchWithOverflow="true">
-					<reportElement style="Detail" positionType="Float" x="597" y="0" width="199" height="18" uuid="39212b19-8e0c-4637-a8c7-683c9c919f65"/>
-					<textElement>
-						<font size="14"/>
-					</textElement>
-					<textFieldExpression><![CDATA[$F{Jumlah Retur}]]></textFieldExpression>
+					<textFieldExpression><![CDATA[$F{Tanggal Retur Pembelian}]]></textFieldExpression>
 				</textField>
 			</frame>
 		</band>
@@ -135,7 +122,7 @@ FROM
 	<columnFooter>
 		<band height="7" splitType="Stretch">
 			<line>
-				<reportElement positionType="FixRelativeToBottom" x="0" y="3" width="555" height="1" uuid="13bd2be8-bec2-44c4-80cf-f6f0009bd73d"/>
+				<reportElement positionType="FixRelativeToBottom" x="0" y="3" width="555" height="1" uuid="c9ce3719-e75d-491c-bc45-851225abf2f9"/>
 				<graphicElement>
 					<pen lineWidth="0.5" lineColor="#999999"/>
 				</graphicElement>
@@ -145,23 +132,23 @@ FROM
 	<pageFooter>
 		<band height="25" splitType="Stretch">
 			<frame>
-				<reportElement mode="Opaque" x="0" y="0" width="802" height="25" forecolor="#D0B48E" backcolor="#000000" uuid="2a4742fd-d428-4474-b98e-bb770257ea9d"/>
+				<reportElement mode="Opaque" x="0" y="0" width="802" height="25" forecolor="#D0B48E" backcolor="#000000" uuid="8029a1f5-680a-4753-a442-786dca7701ac"/>
 				<textField evaluationTime="Report">
-					<reportElement style="Column header" x="757" y="3" width="40" height="20" forecolor="#FFFFFF" uuid="53fb697e-dd66-43b0-ba74-172d60b43941"/>
+					<reportElement style="Column header" x="757" y="3" width="40" height="20" forecolor="#FFFFFF" uuid="0a9d2044-3e26-44a3-9fea-d5431af61395"/>
 					<textElement verticalAlignment="Middle">
 						<font size="10" isBold="false"/>
 					</textElement>
 					<textFieldExpression><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
 				</textField>
 				<textField>
-					<reportElement style="Column header" x="677" y="3" width="80" height="20" forecolor="#FFFFFF" uuid="90ed4312-9a9c-487c-9d15-d6545c0f0766"/>
+					<reportElement style="Column header" x="677" y="3" width="80" height="20" forecolor="#FFFFFF" uuid="c76d1031-5704-4658-9c4d-eb507c8ae886"/>
 					<textElement textAlignment="Right" verticalAlignment="Middle">
 						<font size="10" isBold="false"/>
 					</textElement>
 					<textFieldExpression><![CDATA["Page "+$V{PAGE_NUMBER}+" of"]]></textFieldExpression>
 				</textField>
 				<textField pattern="EEEEE dd MMMMM yyyy">
-					<reportElement style="Column header" x="2" y="3" width="197" height="20" forecolor="#FFFFFF" uuid="16e2bb09-cf94-4657-b42f-3903d32c9f88"/>
+					<reportElement style="Column header" x="2" y="3" width="197" height="20" forecolor="#FFFFFF" uuid="5392cadf-33e6-47eb-90f4-25072a353d2a"/>
 					<textElement verticalAlignment="Middle">
 						<font size="10" isBold="false"/>
 					</textElement>
