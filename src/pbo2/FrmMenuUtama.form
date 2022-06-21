@@ -141,6 +141,9 @@
             <Property name="verticalAlignment" type="int" value="3"/>
             <Property name="verticalTextPosition" type="int" value="3"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="mnuLaporanActionPerformed"/>
+          </Events>
           <SubComponents>
             <MenuItem class="javax.swing.JMenuItem" name="mnuLapKonsumen">
               <Properties>
@@ -160,6 +163,9 @@
                 </Property>
                 <Property name="text" type="java.lang.String" value="Supplier"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="mnuLapSupplierActionPerformed"/>
+              </Events>
             </MenuItem>
             <MenuItem class="javax.swing.JMenuItem" name="mnuLapBarang">
               <Properties>
@@ -179,6 +185,9 @@
                 </Property>
                 <Property name="text" type="java.lang.String" value="Penjualan"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="mnuLapPenjualanActionPerformed"/>
+              </Events>
             </MenuItem>
             <MenuItem class="javax.swing.JMenuItem" name="mnuLapPembelian">
               <Properties>
@@ -198,6 +207,9 @@
                 </Property>
                 <Property name="text" type="java.lang.String" value="Retur Penjualan"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="mnuLapReturPenjualanActionPerformed"/>
+              </Events>
             </MenuItem>
             <MenuItem class="javax.swing.JMenuItem" name="mnuLapReturPembelian">
               <Properties>
@@ -206,6 +218,9 @@
                 </Property>
                 <Property name="text" type="java.lang.String" value="Retur Pembelian"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="mnuLapReturPembelianActionPerformed"/>
+              </Events>
             </MenuItem>
           </SubComponents>
         </Menu>

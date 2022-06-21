@@ -255,6 +255,11 @@ public class FrmMenuUtama extends javax.swing.JFrame {
         mnuLaporan.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         mnuLaporan.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
         mnuLaporan.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        mnuLaporan.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                mnuLaporanActionPerformed(evt);
+            }
+        });
 
         mnuLapKonsumen.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
         mnuLapKonsumen.setText("Konsumen");
@@ -267,6 +272,11 @@ public class FrmMenuUtama extends javax.swing.JFrame {
 
         mnuLapSupplier.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
         mnuLapSupplier.setText("Supplier");
+        mnuLapSupplier.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                mnuLapSupplierActionPerformed(evt);
+            }
+        });
         mnuLaporan.add(mnuLapSupplier);
 
         mnuLapBarang.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
@@ -280,6 +290,11 @@ public class FrmMenuUtama extends javax.swing.JFrame {
 
         mnuLapPenjualan.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
         mnuLapPenjualan.setText("Penjualan");
+        mnuLapPenjualan.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                mnuLapPenjualanActionPerformed(evt);
+            }
+        });
         mnuLaporan.add(mnuLapPenjualan);
 
         mnuLapPembelian.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
@@ -293,10 +308,20 @@ public class FrmMenuUtama extends javax.swing.JFrame {
 
         mnuLapReturPenjualan.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
         mnuLapReturPenjualan.setText("Retur Penjualan");
+        mnuLapReturPenjualan.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                mnuLapReturPenjualanActionPerformed(evt);
+            }
+        });
         mnuLaporan.add(mnuLapReturPenjualan);
 
         mnuLapReturPembelian.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
         mnuLapReturPembelian.setText("Retur Pembelian");
+        mnuLapReturPembelian.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                mnuLapReturPembelianActionPerformed(evt);
+            }
+        });
         mnuLaporan.add(mnuLapReturPembelian);
 
         menuUtama.add(mnuLaporan);
@@ -403,6 +428,26 @@ public class FrmMenuUtama extends javax.swing.JFrame {
         } catch (Exception e){
         }
     }//GEN-LAST:event_mnuLapPembelianActionPerformed
+
+    private void mnuLaporanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mnuLaporanActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_mnuLaporanActionPerformed
+
+    private void mnuLapSupplierActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mnuLapSupplierActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_mnuLapSupplierActionPerformed
+
+    private void mnuLapPenjualanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mnuLapPenjualanActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_mnuLapPenjualanActionPerformed
+
+    private void mnuLapReturPenjualanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mnuLapReturPenjualanActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_mnuLapReturPenjualanActionPerformed
+
+    private void mnuLapReturPembelianActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mnuLapReturPembelianActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_mnuLapReturPembelianActionPerformed
 
     /**
      * @param args the command line arguments
