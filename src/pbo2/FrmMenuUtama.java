@@ -129,6 +129,7 @@ public class FrmMenuUtama extends javax.swing.JFrame {
         mnuLapReturPenjualan = new javax.swing.JMenuItem();
         mnuLapReturPembelian = new javax.swing.JMenuItem();
         mnuAbout = new javax.swing.JMenu();
+        jMenuItem1 = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Menu Utama");
@@ -331,6 +332,21 @@ public class FrmMenuUtama extends javax.swing.JFrame {
         mnuAbout.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         mnuAbout.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
         mnuAbout.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        mnuAbout.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                mnuAboutActionPerformed(evt);
+            }
+        });
+
+        jMenuItem1.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_P, java.awt.event.InputEvent.CTRL_MASK));
+        jMenuItem1.setText("About Me");
+        jMenuItem1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem1ActionPerformed(evt);
+            }
+        });
+        mnuAbout.add(jMenuItem1);
+
         menuUtama.add(mnuAbout);
 
         setJMenuBar(menuUtama);
@@ -356,7 +372,7 @@ public class FrmMenuUtama extends javax.swing.JFrame {
 
     private void mnuLapKonsumenActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mnuLapKonsumenActionPerformed
         // TODO add your handling code here:
-         String filename = "src/pbo2/LapKonsumen.jasper";
+         String filename = "src/pbo2/LaporanKonsumen.jasper";
         Map param = new HashMap();
         try {
         JasperPrint cetak = JasperFillManager.fillReport(filename, param, k.con);
@@ -435,19 +451,57 @@ public class FrmMenuUtama extends javax.swing.JFrame {
 
     private void mnuLapSupplierActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mnuLapSupplierActionPerformed
         // TODO add your handling code here:
+        String filename = "src/pbo2/LaporanSupplier.jasper";
+        Map param = new HashMap();
+        try {
+        JasperPrint cetak = JasperFillManager.fillReport(filename, param, k.con);
+        JasperViewer.viewReport(cetak, false);
+        } catch (Exception e){
+        }
     }//GEN-LAST:event_mnuLapSupplierActionPerformed
 
     private void mnuLapPenjualanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mnuLapPenjualanActionPerformed
         // TODO add your handling code here:
+        String filename = "src/pbo2/LaporanPenjualan.jasper";
+        Map param = new HashMap();
+        try {
+        JasperPrint cetak = JasperFillManager.fillReport(filename, param, k.con);
+        JasperViewer.viewReport(cetak, false);
+        } catch (Exception e){
+        }
     }//GEN-LAST:event_mnuLapPenjualanActionPerformed
 
     private void mnuLapReturPenjualanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mnuLapReturPenjualanActionPerformed
         // TODO add your handling code here:
+        String filename = "src/pbo2/LaporanReturPenjualan.jasper";
+        Map param = new HashMap();
+        try {
+        JasperPrint cetak = JasperFillManager.fillReport(filename, param, k.con);
+        JasperViewer.viewReport(cetak, false);
+        } catch (Exception e){
+        }
     }//GEN-LAST:event_mnuLapReturPenjualanActionPerformed
 
     private void mnuLapReturPembelianActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mnuLapReturPembelianActionPerformed
         // TODO add your handling code here:
+        String filename = "src/pbo2/LaporanReturPembelian.jasper";
+        Map param = new HashMap();
+        try {
+        JasperPrint cetak = JasperFillManager.fillReport(filename, param, k.con);
+        JasperViewer.viewReport(cetak, false);
+        } catch (Exception e){
+        }
     }//GEN-LAST:event_mnuLapReturPembelianActionPerformed
+
+    private void mnuAboutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mnuAboutActionPerformed
+        // TODO add your handling code here:
+      
+    }//GEN-LAST:event_mnuAboutActionPerformed
+
+    private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
+        // TODO add your handling code here:
+        new FrmAbout().setVisible(true);
+    }//GEN-LAST:event_jMenuItem1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -490,6 +544,7 @@ public class FrmMenuUtama extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JMenuBar menuUtama;
     private javax.swing.JMenu mnuAbout;
