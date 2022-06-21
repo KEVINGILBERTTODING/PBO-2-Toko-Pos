@@ -222,7 +222,7 @@ public class FrmReturPembeliaan extends javax.swing.JFrame {
         jLabel2.setFont(new java.awt.Font("Arial Rounded MT Bold", 1, 12)); // NOI18N
         jLabel2.setText("Tanggal Retur Beli");
 
-        mKodeReturBeli.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(102, 102, 255), 2));
+        mKodeReturBeli.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         mKodeReturBeli.setEnabled(false);
         mKodeReturBeli.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -258,7 +258,7 @@ public class FrmReturPembeliaan extends javax.swing.JFrame {
         jLabel13.setFont(new java.awt.Font("Arial Rounded MT Bold", 1, 12)); // NOI18N
         jLabel13.setText("Kode Supplier");
 
-        mKodeSupplier.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(153, 153, 255), 2));
+        mKodeSupplier.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         mKodeSupplier.setCaretColor(new java.awt.Color(153, 153, 255));
         mKodeSupplier.setEnabled(false);
         mKodeSupplier.addActionListener(new java.awt.event.ActionListener() {
@@ -501,6 +501,7 @@ public class FrmReturPembeliaan extends javax.swing.JFrame {
         });
 
         btnKeluar.setText("Keluar");
+        btnKeluar.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         btnKeluar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnKeluarActionPerformed(evt);
@@ -522,11 +523,9 @@ public class FrmReturPembeliaan extends javax.swing.JFrame {
         });
 
         jLabel10.setFont(new java.awt.Font("Arial Rounded MT Bold", 1, 12)); // NOI18N
-        jLabel10.setForeground(new java.awt.Color(102, 153, 255));
         jLabel10.setText("Total");
 
         jLabel11.setFont(new java.awt.Font("Arial Rounded MT Bold", 1, 12)); // NOI18N
-        jLabel11.setForeground(new java.awt.Color(255, 51, 51));
         jLabel11.setText("Bayar");
 
         mBayar.setEnabled(false);
@@ -537,7 +536,6 @@ public class FrmReturPembeliaan extends javax.swing.JFrame {
         });
 
         jLabel12.setFont(new java.awt.Font("Arial Rounded MT Bold", 1, 12)); // NOI18N
-        jLabel12.setForeground(new java.awt.Color(51, 153, 0));
         jLabel12.setText("Kembali");
 
         mKembali.setEnabled(false);
@@ -604,7 +602,7 @@ public class FrmReturPembeliaan extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel12)
                     .addComponent(mKembali, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(30, Short.MAX_VALUE))
+                .addContainerGap(31, Short.MAX_VALUE))
         );
 
         pack();
@@ -782,7 +780,7 @@ public class FrmReturPembeliaan extends javax.swing.JFrame {
 
     private void btnKeluarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnKeluarActionPerformed
         // TODO add your handling code here:
-        System.exit(0);
+        this.dispose();
     }//GEN-LAST:event_btnKeluarActionPerformed
 
     private void btnBaruActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBaruActionPerformed

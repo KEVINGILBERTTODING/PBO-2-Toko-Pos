@@ -217,10 +217,10 @@ public class FrmReturPenjualan extends javax.swing.JFrame {
 
         jPanel1.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.LOWERED, java.awt.Color.gray, java.awt.Color.gray, java.awt.Color.gray, java.awt.Color.gray));
 
-        jLabel1.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 12)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Arial Rounded MT Bold", 1, 12)); // NOI18N
         jLabel1.setText("Kode Retur Penjualan");
 
-        jLabel2.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 12)); // NOI18N
+        jLabel2.setFont(new java.awt.Font("Arial Rounded MT Bold", 1, 12)); // NOI18N
         jLabel2.setText("Tgl Retur Penjualan");
 
         mKodeReturJual.setEnabled(false);
@@ -234,10 +234,10 @@ public class FrmReturPenjualan extends javax.swing.JFrame {
         sTglReturJual.setEditor(new javax.swing.JSpinner.DateEditor(sTglReturJual, "dd-MMMM-yyyy"));
         sTglReturJual.setEnabled(false);
 
-        jLabel3.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 12)); // NOI18N
+        jLabel3.setFont(new java.awt.Font("Arial Rounded MT Bold", 1, 12)); // NOI18N
         jLabel3.setText("Kode Penjualan");
 
-        jLabel4.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 12)); // NOI18N
+        jLabel4.setFont(new java.awt.Font("Arial Rounded MT Bold", 1, 12)); // NOI18N
         jLabel4.setText("Nama Konsumen");
 
         mNamaKonsumen.setEnabled(false);
@@ -262,7 +262,7 @@ public class FrmReturPenjualan extends javax.swing.JFrame {
             }
         });
 
-        jLabel13.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 12)); // NOI18N
+        jLabel13.setFont(new java.awt.Font("Arial Rounded MT Bold", 1, 12)); // NOI18N
         jLabel13.setText("Kode Konsumen");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
@@ -281,9 +281,8 @@ public class FrmReturPenjualan extends javax.swing.JFrame {
                 .addGap(383, 383, 383)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel4)
-                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                        .addComponent(jLabel3)
-                        .addComponent(jLabel13)))
+                    .addComponent(jLabel13)
+                    .addComponent(jLabel3))
                 .addGap(13, 13, 13)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(cKodePenjualan, 0, 264, Short.MAX_VALUE)
@@ -523,10 +522,12 @@ public class FrmReturPenjualan extends javax.swing.JFrame {
             }
         });
 
-        jLabel10.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 12)); // NOI18N
+        jLabel10.setFont(new java.awt.Font("Arial Rounded MT Bold", 1, 12)); // NOI18N
+        jLabel10.setForeground(new java.awt.Color(102, 153, 255));
         jLabel10.setText("Total");
 
-        jLabel11.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 12)); // NOI18N
+        jLabel11.setFont(new java.awt.Font("Arial Rounded MT Bold", 1, 12)); // NOI18N
+        jLabel11.setForeground(new java.awt.Color(255, 51, 51));
         jLabel11.setText("Bayar");
 
         mBayar.setEnabled(false);
@@ -536,7 +537,8 @@ public class FrmReturPenjualan extends javax.swing.JFrame {
             }
         });
 
-        jLabel12.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 12)); // NOI18N
+        jLabel12.setFont(new java.awt.Font("Arial Rounded MT Bold", 1, 12)); // NOI18N
+        jLabel12.setForeground(new java.awt.Color(51, 153, 0));
         jLabel12.setText("Kembali");
 
         mKembali.setEnabled(false);

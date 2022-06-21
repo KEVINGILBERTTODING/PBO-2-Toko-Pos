@@ -9,6 +9,9 @@ import java.util.HashMap;
 import java.util.Map;
 import javax.swing.JFrame;
 import javax.swing.ImageIcon;
+import net.sf.jasperreports.engine.JasperFillManager;
+import net.sf.jasperreports.engine.JasperPrint;
+import net.sf.jasperreports.view.JasperViewer;
 //import net.sf.jasperreports.engine.JasperFillManager;
 //import net.sf.jasperreports.engine.JasperPrint;
 //import net.sf.jasperreports.view.JasperViewer;
@@ -260,6 +263,11 @@ public class FrmMenuUtama extends javax.swing.JFrame {
 
         mnuLapSupplier.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
         mnuLapSupplier.setText("Supplier");
+        mnuLapSupplier.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                mnuLapSupplierActionPerformed(evt);
+            }
+        });
         mnuLaporan.add(mnuLapSupplier);
 
         mnuLapBarang.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
@@ -273,18 +281,38 @@ public class FrmMenuUtama extends javax.swing.JFrame {
 
         mnuLapPenjualan.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
         mnuLapPenjualan.setText("Penjualan");
+        mnuLapPenjualan.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                mnuLapPenjualanActionPerformed(evt);
+            }
+        });
         mnuLaporan.add(mnuLapPenjualan);
 
         mnuLapPembelian.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
         mnuLapPembelian.setText("Pembelian");
+        mnuLapPembelian.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                mnuLapPembelianActionPerformed(evt);
+            }
+        });
         mnuLaporan.add(mnuLapPembelian);
 
         mnuLapReturPenjualan.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
         mnuLapReturPenjualan.setText("Retur Penjualan");
+        mnuLapReturPenjualan.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                mnuLapReturPenjualanActionPerformed(evt);
+            }
+        });
         mnuLaporan.add(mnuLapReturPenjualan);
 
         mnuLapReturPembelian.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
         mnuLapReturPembelian.setText("Retur Pembelian");
+        mnuLapReturPembelian.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                mnuLapReturPembelianActionPerformed(evt);
+            }
+        });
         mnuLaporan.add(mnuLapReturPembelian);
 
         jMenuBar1.add(mnuLaporan);
@@ -316,10 +344,24 @@ public class FrmMenuUtama extends javax.swing.JFrame {
 
     private void mnuReturPembelianActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mnuReturPembelianActionPerformed
         // TODO add your handling code here:
+         String filename = "src/pbo2/LaporanReturPembelian.jasper";
+        Map param = new HashMap();
+        try {
+        JasperPrint cetak = JasperFillManager.fillReport(filename, param, k.con);
+        JasperViewer.viewReport(cetak, false);
+        } catch (Exception e){
+        }
     }//GEN-LAST:event_mnuReturPembelianActionPerformed
 
     private void mnuLapKonsumenActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mnuLapKonsumenActionPerformed
         // TODO add your handling code here:
+         String filename = "src/pbo2/LaporanKonsumen.jasper";
+        Map param = new HashMap();
+        try {
+        JasperPrint cetak = JasperFillManager.fillReport(filename, param, k.con);
+        JasperViewer.viewReport(cetak, false);
+        } catch (Exception e){
+        }
     }//GEN-LAST:event_mnuLapKonsumenActionPerformed
 
     private void mnuLapBarangActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mnuLapBarangActionPerformed
@@ -354,8 +396,7 @@ public class FrmMenuUtama extends javax.swing.JFrame {
 
     private void formWindowActivated(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowActivated
         // TODO add your handling code here:
-        ImageIcon icon = new ImageIcon("./gambar/mainicon.png");
-        setIconImage(icon.getImage());
+     
     }//GEN-LAST:event_formWindowActivated
 
     private void mnuPembelianActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mnuPembelianActionPerformed
@@ -367,6 +408,61 @@ public class FrmMenuUtama extends javax.swing.JFrame {
         // TODO add your handling code here:
         new FrmReturPenjualan().setVisible(true);
     }//GEN-LAST:event_mnuReturPenjualanActionPerformed
+
+    private void mnuLapSupplierActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mnuLapSupplierActionPerformed
+        // TODO add your handling code here:
+         String filename = "src/pbo2/LaporanSupplier.jasper";
+        Map param = new HashMap();
+        try {
+        JasperPrint cetak = JasperFillManager.fillReport(filename, param, k.con);
+        JasperViewer.viewReport(cetak, false);
+        } catch (Exception e){
+        }
+    }//GEN-LAST:event_mnuLapSupplierActionPerformed
+
+    private void mnuLapPenjualanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mnuLapPenjualanActionPerformed
+        // TODO add your handling code here:
+         String filename = "src/pbo2/LaporanPenjualan.jasper";
+        Map param = new HashMap();
+        try {
+        JasperPrint cetak = JasperFillManager.fillReport(filename, param, k.con);
+        JasperViewer.viewReport(cetak, false);
+        } catch (Exception e){
+        }
+    }//GEN-LAST:event_mnuLapPenjualanActionPerformed
+
+    private void mnuLapPembelianActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mnuLapPembelianActionPerformed
+        // TODO add your handling code here:
+         String filename = "src/pbo2/LaporanPembelian.jasper";
+        Map param = new HashMap();
+        try {
+        JasperPrint cetak = JasperFillManager.fillReport(filename, param, k.con);
+        JasperViewer.viewReport(cetak, false);
+        } catch (Exception e){
+        }
+    }//GEN-LAST:event_mnuLapPembelianActionPerformed
+
+    private void mnuLapReturPenjualanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mnuLapReturPenjualanActionPerformed
+        // TODO add your handling code here:
+         String filename = "src/pbo2/LaporanReturPenjualan.jasper";
+        Map param = new HashMap();
+        try {
+        JasperPrint cetak = JasperFillManager.fillReport(filename, param, k.con);
+        JasperViewer.viewReport(cetak, false);
+        } catch (Exception e){
+        }
+    }//GEN-LAST:event_mnuLapReturPenjualanActionPerformed
+
+    private void mnuLapReturPembelianActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mnuLapReturPembelianActionPerformed
+        // TODO add your handling code here:
+         String filename = "src/pbo2/LaporanReturPembelian.jasper";
+        Map param = new HashMap();
+        try {
+        JasperPrint cetak = JasperFillManager.fillReport(filename, param, k.con);
+        JasperViewer.viewReport(cetak, false);
+        } catch (Exception e){
+        }
+    }//GEN-LAST:event_mnuLapReturPembelianActionPerformed
 
     /**
      * @param args the command line arguments

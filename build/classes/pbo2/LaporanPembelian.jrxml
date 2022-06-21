@@ -1,8 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" language="groovy" pageWidth="842" pageHeight="595" orientation="Landscape" columnWidth="802" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="d33c785d-fb64-4505-aa54-47956abb6779">
-	<property name="ireport.zoom" value="1.0"/>
-	<property name="ireport.x" value="0"/>
-	<property name="ireport.y" value="0"/>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" language="groovy" pageWidth="842" pageHeight="595" orientation="Landscape" columnWidth="802" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="db43558d-db26-43c3-939c-2d113516d213">
 	<style name="Title" forecolor="#FFFFFF" fontName="Times New Roman" fontSize="50" isBold="false" pdfFontName="Times-Bold"/>
 	<style name="SubTitle" forecolor="#CCCCCC" fontName="Times New Roman" fontSize="18" isBold="false" pdfFontName="Times-Roman"/>
 	<style name="Column header" forecolor="#666666" fontName="Times New Roman" fontSize="14" isBold="true" pdfFontName="Times-Roman"/>
@@ -30,31 +27,31 @@ FROM
 	<title>
 		<band height="102" splitType="Stretch">
 			<image>
-				<reportElement x="725" y="0" width="77" height="102" uuid="1f860cdf-4525-4a92-bb7c-8f6d98921508"/>
+				<reportElement x="725" y="0" width="77" height="102" uuid="0b3a64d0-68c3-41b6-8189-c3268cace2cc"/>
 				<imageExpression><![CDATA["cherry.jpg"]]></imageExpression>
 			</image>
 			<frame>
-				<reportElement mode="Opaque" x="0" y="0" width="721" height="66" backcolor="#000000" uuid="8d11a029-16cf-4e9b-ba3b-8d2ce0293e7b"/>
+				<reportElement mode="Opaque" x="0" y="0" width="721" height="66" backcolor="#000000" uuid="a31aab2b-931b-4ed5-b1b2-b39742c9d68f"/>
 				<staticText>
-					<reportElement style="Title" x="0" y="0" width="452" height="66" uuid="f3cfb646-9024-411a-9508-40486c670ebf"/>
+					<reportElement style="Title" x="0" y="0" width="370" height="66" uuid="8c3ab5a3-c9ad-4a47-a2da-23f374fe961a"/>
 					<box topPadding="4" leftPadding="4" bottomPadding="4" rightPadding="4"/>
 					<textElement verticalAlignment="Bottom">
 						<font isBold="false"/>
 					</textElement>
-					<text><![CDATA[ADELAIDE STORE]]></text>
+					<text><![CDATA[Cherry Title]]></text>
 				</staticText>
 				<staticText>
-					<reportElement style="SubTitle" x="370" y="37" width="316" height="29" uuid="c9d41db2-ebcb-43db-be8a-873b956c33fd"/>
+					<reportElement style="SubTitle" x="370" y="37" width="316" height="29" uuid="34b1685e-7be1-4553-8c3f-ebb269bfaed2"/>
 					<textElement textAlignment="Right">
 						<font size="22" isBold="false"/>
 					</textElement>
-					<text><![CDATA[Laporan Pembelian]]></text>
+					<text><![CDATA[Cherry SubTitle]]></text>
 				</staticText>
 			</frame>
 			<frame>
-				<reportElement mode="Opaque" x="0" y="70" width="721" height="32" forecolor="#000000" backcolor="#CC0000" uuid="abdd71c8-d403-4b7f-b13b-5263e19ecb5b"/>
+				<reportElement mode="Opaque" x="0" y="70" width="721" height="32" forecolor="#000000" backcolor="#CC0000" uuid="5da9e908-7f6f-46a3-8b18-f702d9e9328e"/>
 				<textField pattern="EEEEE dd MMMMM yyyy">
-					<reportElement x="553" y="12" width="144" height="20" forecolor="#FFFFFF" uuid="2300ca02-27ad-4761-9fa9-6ea1b24144f0"/>
+					<reportElement x="553" y="12" width="144" height="20" forecolor="#FFFFFF" uuid="74061314-d122-4c48-bba7-b5537119b33f"/>
 					<textElement textAlignment="Right">
 						<font size="12"/>
 					</textElement>
@@ -69,21 +66,21 @@ FROM
 	<columnHeader>
 		<band height="18" splitType="Stretch">
 			<staticText>
-				<reportElement style="Column header" x="0" y="0" width="265" height="18" forecolor="#000000" uuid="605f71e8-604b-4057-b85c-c4beec012222"/>
+				<reportElement style="Column header" x="0" y="0" width="265" height="18" forecolor="#000000" uuid="27d4e491-248b-41cb-8101-c57baf24bfc0"/>
 				<textElement>
 					<font isBold="false"/>
 				</textElement>
 				<text><![CDATA[Kode Pembelian]]></text>
 			</staticText>
 			<staticText>
-				<reportElement style="Column header" x="265" y="0" width="265" height="18" forecolor="#000000" uuid="2cb1eb32-21d1-48c5-a452-d19053ecda8f"/>
+				<reportElement style="Column header" x="265" y="0" width="265" height="18" forecolor="#000000" uuid="68bdb2ca-b61e-44c1-aeb5-199e01aecf32"/>
 				<textElement>
 					<font isBold="false"/>
 				</textElement>
 				<text><![CDATA[Kode Supplier]]></text>
 			</staticText>
 			<staticText>
-				<reportElement style="Column header" x="530" y="0" width="265" height="18" forecolor="#000000" uuid="801268b6-8ba7-4d79-ac15-af6889c6b954"/>
+				<reportElement style="Column header" x="530" y="0" width="265" height="18" forecolor="#000000" uuid="dd204027-5ef5-42d5-ae27-ef12b46db616"/>
 				<textElement>
 					<font isBold="false"/>
 				</textElement>
@@ -94,23 +91,23 @@ FROM
 	<detail>
 		<band height="18" splitType="Stretch">
 			<frame>
-				<reportElement style="Row" mode="Opaque" x="0" y="0" width="797" height="18" uuid="e5bace3b-b0b2-4097-ba1e-37adc21a7022"/>
+				<reportElement style="Row" mode="Opaque" x="0" y="0" width="797" height="18" uuid="4a3abdb9-4e0d-4129-b73b-514450e9ca61"/>
 				<textField isStretchWithOverflow="true">
-					<reportElement style="Detail" positionType="Float" x="0" y="0" width="265" height="18" uuid="f05c0747-a832-4f54-9a0a-c90e1b443560"/>
+					<reportElement style="Detail" positionType="Float" x="0" y="0" width="265" height="18" uuid="bef373bc-ef3e-4dc2-ab5d-0934d8145d54"/>
 					<textElement>
 						<font size="14"/>
 					</textElement>
 					<textFieldExpression><![CDATA[$F{Kode Pembelian}]]></textFieldExpression>
 				</textField>
 				<textField isStretchWithOverflow="true">
-					<reportElement style="Detail" positionType="Float" x="265" y="0" width="265" height="18" uuid="15fc2fae-902d-4da0-b0ce-af557f185c9e"/>
+					<reportElement style="Detail" positionType="Float" x="265" y="0" width="265" height="18" uuid="550cc884-a61d-44f6-a448-2efa1d8a73f5"/>
 					<textElement>
 						<font size="14"/>
 					</textElement>
 					<textFieldExpression><![CDATA[$F{Kode Supplier}]]></textFieldExpression>
 				</textField>
 				<textField isStretchWithOverflow="true">
-					<reportElement style="Detail" positionType="Float" x="530" y="0" width="265" height="18" uuid="4cabeaac-1585-4fe1-b5c4-f1f2c53af4cb"/>
+					<reportElement style="Detail" positionType="Float" x="530" y="0" width="265" height="18" uuid="45d3d8da-0f97-485d-b3ee-90c7f2c4b02a"/>
 					<textElement>
 						<font size="14"/>
 					</textElement>
@@ -122,7 +119,7 @@ FROM
 	<columnFooter>
 		<band height="7" splitType="Stretch">
 			<line>
-				<reportElement positionType="FixRelativeToBottom" x="0" y="3" width="555" height="1" uuid="5136af96-49b6-405a-9659-2c69789bc042"/>
+				<reportElement positionType="FixRelativeToBottom" x="0" y="3" width="555" height="1" uuid="c86de367-ed4c-4bac-bdae-ca4b1cc2dc62"/>
 				<graphicElement>
 					<pen lineWidth="0.5" lineColor="#999999"/>
 				</graphicElement>
@@ -132,23 +129,23 @@ FROM
 	<pageFooter>
 		<band height="25" splitType="Stretch">
 			<frame>
-				<reportElement mode="Opaque" x="0" y="0" width="802" height="25" forecolor="#D0B48E" backcolor="#000000" uuid="6b60c1dc-e1f7-4a0f-87af-591882a3eedd"/>
+				<reportElement mode="Opaque" x="0" y="0" width="802" height="25" forecolor="#D0B48E" backcolor="#000000" uuid="86992e85-6fc2-41c7-b970-8820c7058724"/>
 				<textField evaluationTime="Report">
-					<reportElement style="Column header" x="757" y="3" width="40" height="20" forecolor="#FFFFFF" uuid="a01198eb-c710-44a7-ab94-119f0ccce07c"/>
+					<reportElement style="Column header" x="757" y="3" width="40" height="20" forecolor="#FFFFFF" uuid="3dc4931a-2ea6-4e88-8ba3-232407752c4e"/>
 					<textElement verticalAlignment="Middle">
 						<font size="10" isBold="false"/>
 					</textElement>
 					<textFieldExpression><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
 				</textField>
 				<textField>
-					<reportElement style="Column header" x="677" y="3" width="80" height="20" forecolor="#FFFFFF" uuid="b6448024-ca3c-4f9f-a957-20276c60babe"/>
+					<reportElement style="Column header" x="677" y="3" width="80" height="20" forecolor="#FFFFFF" uuid="85b3c680-1a67-4cf2-8b05-66b52c45484f"/>
 					<textElement textAlignment="Right" verticalAlignment="Middle">
 						<font size="10" isBold="false"/>
 					</textElement>
 					<textFieldExpression><![CDATA["Page "+$V{PAGE_NUMBER}+" of"]]></textFieldExpression>
 				</textField>
 				<textField pattern="EEEEE dd MMMMM yyyy">
-					<reportElement style="Column header" x="2" y="3" width="197" height="20" forecolor="#FFFFFF" uuid="7841be0b-8dfc-4fb2-a67a-007fdd58daf3"/>
+					<reportElement style="Column header" x="2" y="3" width="197" height="20" forecolor="#FFFFFF" uuid="aa78cd98-032f-4c30-bd67-09b2eb3623b2"/>
 					<textElement verticalAlignment="Middle">
 						<font size="10" isBold="false"/>
 					</textElement>
