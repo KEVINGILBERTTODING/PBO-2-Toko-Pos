@@ -284,6 +284,11 @@ public class FrmMenuUtama extends javax.swing.JFrame {
 
         mnuLapPembelian.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
         mnuLapPembelian.setText("Pembelian");
+        mnuLapPembelian.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                mnuLapPembelianActionPerformed(evt);
+            }
+        });
         mnuLaporan.add(mnuLapPembelian);
 
         mnuLapReturPenjualan.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
@@ -387,6 +392,17 @@ public class FrmMenuUtama extends javax.swing.JFrame {
         // TODO add your handling code here:
         new FrmReturPenjualan().setVisible(true);
     }//GEN-LAST:event_mnuReturPenjualanActionPerformed
+
+    private void mnuLapPembelianActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mnuLapPembelianActionPerformed
+        // TODO add your handling code here:
+          String filename = "src/pbo2/LaporanPembelian.jasper";
+        Map param = new HashMap();
+        try {
+        JasperPrint cetak = JasperFillManager.fillReport(filename, param, k.con);
+        JasperViewer.viewReport(cetak, false);
+        } catch (Exception e){
+        }
+    }//GEN-LAST:event_mnuLapPembelianActionPerformed
 
     /**
      * @param args the command line arguments
